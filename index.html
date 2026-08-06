@@ -472,6 +472,15 @@
       border-right: 0;
     }
 
+    .client-logo {
+      display: block;
+      max-width: 78%;
+      max-height: 42px;
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.65) contrast(0.9);
+      opacity: 0.82;
+    }
+
     .software-slot {
       gap: 6px;
       padding: 12px 8px;
@@ -512,15 +521,10 @@
     }
 
     .software-obs {
-      width: 42px;
-      height: 42px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
-      padding: 4px;
-      border-radius: 50%;
-      border: 1px solid rgba(242, 238, 232, 0.72);
-      background:
-        radial-gradient(circle, rgba(242, 238, 232, 0.13), transparent 58%),
-        rgba(0, 0, 0, 0.38);
+      filter: brightness(1.4) contrast(0.95);
     }
 
     .work-section {
@@ -1230,9 +1234,8 @@
       }
 
       .software-obs {
-        width: 32px;
-        height: 32px;
-        padding: 3px;
+        width: 36px;
+        height: 36px;
       }
 
       .software-name {
@@ -1481,9 +1484,8 @@
       }
 
       .software-obs {
-        width: 28px;
-        height: 28px;
-        padding: 3px;
+        width: 32px;
+        height: 32px;
       }
 
       .software-name {
@@ -1571,10 +1573,10 @@
         <div class="logo-group">
           <h3>Empresas / clientes</h3>
           <div class="logo-grid">
-            <div class="logo-slot">Logo 01</div>
-            <div class="logo-slot">Logo 02</div>
-            <div class="logo-slot">Logo 03</div>
-            <div class="logo-slot">Logo 04</div>
+            <div class="logo-slot"><img class="client-logo" src="Iconos/GUTDOCTOR.png" alt="Gutdoctor"></div>
+            <div class="logo-slot"><img class="client-logo" src="Iconos/SABANA360.png" alt="Sabana 360"></div>
+            <div class="logo-slot"><img class="client-logo" src="Iconos/JORGEBARON.png" alt="Jorge Barón"></div>
+            <div class="logo-slot"><img class="client-logo" src="Iconos/398.png" alt="398"></div>
           </div>
         </div>
         <div class="logo-group">
@@ -1770,6 +1772,7 @@
     Object.assign(audiovisualProjects[4], {
       title: "Color y Cuerpo – Retrato a Andrés Felipe Rodríguez Velásquez",
       logline: "A través de sus obras y sus reflexiones, Andrés Felipe Rodríguez Velásquez comparte la mirada de un artista en construcción. Un retrato documental sobre la creatividad, la identidad y el proceso de convertir las ideas en expresión.",
+      thumbnail: "Posters/Andres_POSTER.png",
       link: "https://youtu.be/7SeyaSlMlvQ"
     });
 
