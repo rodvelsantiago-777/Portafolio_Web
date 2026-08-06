@@ -512,14 +512,15 @@
     }
 
     .software-obs {
-      color: var(--white);
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      padding: 4px;
       border-radius: 50%;
-      border-color: rgba(242, 238, 232, 0.72);
+      border: 1px solid rgba(242, 238, 232, 0.72);
       background:
         radial-gradient(circle, rgba(242, 238, 232, 0.13), transparent 58%),
         rgba(0, 0, 0, 0.38);
-      font-size: 0.72rem;
-      letter-spacing: 0;
     }
 
     .work-section {
@@ -1228,6 +1229,12 @@
         font-size: 0.78rem;
       }
 
+      .software-obs {
+        width: 32px;
+        height: 32px;
+        padding: 3px;
+      }
+
       .software-name {
         font-size: 0.48rem;
       }
@@ -1473,6 +1480,12 @@
         font-size: 0.7rem;
       }
 
+      .software-obs {
+        width: 28px;
+        height: 28px;
+        padding: 3px;
+      }
+
       .software-name {
         width: 100%;
         font-size: 0.42rem;
@@ -1580,7 +1593,7 @@
               <span class="software-name">Photoshop</span>
             </div>
             <div class="logo-slot software-slot" aria-label="OBS Studio">
-              <span class="software-mark software-obs">OBS</span>
+              <img class="software-obs" src="Iconos/OBS.webp" alt="" aria-hidden="true">
               <span class="software-name">OBS Studio</span>
             </div>
           </div>
