@@ -785,7 +785,7 @@
       position: fixed;
       inset: 0;
       z-index: 50;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       padding: clamp(14px, 3vw, 34px);
@@ -793,11 +793,16 @@
         radial-gradient(circle at 78% 16%, rgba(201, 20, 20, 0.18), transparent 28rem),
         rgba(0, 0, 0, 0.86);
       backdrop-filter: blur(16px);
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 280ms ease, visibility 280ms ease;
     }
 
     .modal.is-open {
-      display: flex;
-      animation: modalFade 220ms ease both;
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
     }
 
     .modal-panel {
@@ -811,15 +816,21 @@
       border: 1px solid var(--line-strong);
       background: linear-gradient(145deg, rgba(28, 18, 18, 0.95), rgba(6, 6, 6, 0.98));
       box-shadow: var(--shadow);
+      opacity: 0;
       padding: clamp(16px, 2.4vw, 28px);
+      transform: translateY(18px) scale(0.975);
+      transition: opacity 360ms ease, transform 420ms var(--ease-out);
+      will-change: opacity, transform;
     }
 
     .modal.is-open .modal-panel {
-      animation: modalPanelIn 360ms var(--ease-out) both;
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
 
     .modal.is-open .modal-media {
-      animation: modalMediaIn 460ms var(--ease-soft) both;
+      opacity: 1;
+      transform: scale(1);
     }
 
     .modal-panel.is-social {
@@ -907,6 +918,10 @@
       background-image: var(--poster-image, none);
       background-position: center;
       background-size: cover;
+      opacity: 0;
+      transform: scale(0.965);
+      transition: opacity 440ms ease 90ms, transform 520ms var(--ease-soft) 90ms;
+      will-change: opacity, transform;
     }
 
     .modal-media.is-poster {
@@ -1015,9 +1030,10 @@
 
     .motion-ready .reveal-target {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 700ms ease, transform 760ms var(--ease-out);
+      transform: translateY(24px);
+      transition: opacity 860ms ease, transform 940ms var(--ease-out);
       transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
     }
 
     .motion-ready .reveal-target.is-visible {
@@ -1943,14 +1959,14 @@
 
     const socialProjects = [
       {
-        type: "instagram",
-        label: "Reel de Instagram",
+        type: "facebook",
+        label: "Reel de Facebook",
         title: "Reel social 01",
         logline: "",
-        link: "https://www.instagram.com/p/DZqOIXbpM3e/",
-        embed: "https://www.instagram.com/p/DZqOIXbpM3e/embed",
-        thumbnail: "Reels/SANTOBUNUELO_1.jpg",
-        color: "#4b1114",
+        link: "https://www.facebook.com/share/r/1CuFeYoAST/",
+        embed: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1CuFeYoAST%2F&show_text=false&width=360",
+        thumbnail: "Reels/CARMEN_1.jpg",
+        color: "#202326",
         number: "01"
       },
       {
@@ -1958,10 +1974,10 @@
         label: "Reel de Instagram",
         title: "Reel social 02",
         logline: "",
-        link: "https://www.instagram.com/p/DJFtbY4O7FT/",
-        embed: "https://www.instagram.com/p/DJFtbY4O7FT/embed",
-        thumbnail: "Reels/KPOINT_2.jpg",
-        color: "#202326",
+        link: "https://www.instagram.com/p/DZqOIXbpM3e/",
+        embed: "https://www.instagram.com/p/DZqOIXbpM3e/embed",
+        thumbnail: "Reels/SANTOBUNUELO_1.jpg",
+        color: "#4b1114",
         number: "02"
       },
       {
@@ -1969,11 +1985,22 @@
         label: "Reel de Instagram",
         title: "Reel social 03",
         logline: "",
+        link: "https://www.instagram.com/p/DJFtbY4O7FT/",
+        embed: "https://www.instagram.com/p/DJFtbY4O7FT/embed",
+        thumbnail: "Reels/KPOINT_2.jpg",
+        color: "#202326",
+        number: "03"
+      },
+      {
+        type: "instagram",
+        label: "Reel de Instagram",
+        title: "Reel social 04",
+        logline: "",
         link: "https://www.instagram.com/p/DJAfw6eSO3e/",
         embed: "https://www.instagram.com/p/DJAfw6eSO3e/embed",
         thumbnail: "Reels/KPOINT_1.jpg",
         color: "#6b1717",
-        number: "03"
+        number: "04"
       }
     ];
 
@@ -1988,6 +2015,7 @@
     const closeButton = modal.querySelector(".modal-close");
     let activeProjects = [];
     let activeProjectIndex = 0;
+    let modalCloseTimer = 0;
 
     function isMobileViewport() {
       return window.matchMedia("(max-width: 720px), (max-width: 920px) and (max-height: 520px)").matches;
@@ -2004,7 +2032,7 @@
         <div class="poster ${project.thumbnail ? "has-image" : ""}" data-number="${project.number}" style="--poster-color: ${project.color}; --poster-image: ${posterImage}"></div>
       `;
       button.addEventListener("click", () => {
-        if (project.type === "instagram" && isMobileViewport()) {
+        if ((project.type === "instagram" || project.type === "facebook") && isMobileViewport()) {
           window.open(project.link, "_blank", "noopener,noreferrer");
           return;
         }
@@ -2048,15 +2076,17 @@
     }
 
     function openProject(project, projects = activeProjects, index = activeProjectIndex) {
+      window.clearTimeout(modalCloseTimer);
       activeProjects = projects;
       activeProjectIndex = index;
-      modalPanel.classList.toggle("is-social", project.type === "instagram");
+      const isSocialProject = project.type === "instagram" || project.type === "facebook";
+      modalPanel.classList.toggle("is-social", isSocialProject);
       modalLabel.textContent = project.label;
       modalTitle.textContent = project.title;
       modalTitle.classList.toggle("is-long", project.title.length > 42);
       modalLogline.textContent = project.logline;
       modalLink.href = project.link;
-      modalLink.textContent = project.type === "instagram" ? "Abrir en Instagram" : "Mírala aquí";
+      modalLink.textContent = project.type === "instagram" ? "Abrir en Instagram" : project.type === "facebook" ? "Abrir en Facebook" : "Mírala aquí";
       modalBtsLink.href = project.btsLink || "#";
       modalBtsLink.textContent = project.btsLabel || "Ver BTS";
       modalBtsLink.style.display = project.btsLink ? "inline-flex" : "none";
@@ -2065,7 +2095,7 @@
       modalMedia.style.setProperty("--poster-image", project.thumbnail ? `url('${project.thumbnail}')` : "none");
       modalMedia.innerHTML = "";
 
-      if (project.type === "instagram") {
+      if (isSocialProject) {
         modalMedia.classList.add("is-embed");
         const iframe = document.createElement("iframe");
         iframe.src = project.embed;
@@ -2094,9 +2124,12 @@
     function closeModal() {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
-      modalPanel.classList.remove("is-social");
-      modalMedia.innerHTML = "";
       document.body.style.overflow = "";
+      modalCloseTimer = window.setTimeout(() => {
+        if (modal.classList.contains("is-open")) return;
+        modalPanel.classList.remove("is-social");
+        modalMedia.innerHTML = "";
+      }, 320);
     }
 
     document.querySelectorAll("[data-scroll]").forEach((button) => {
@@ -2182,7 +2215,16 @@
         rootMargin: "0px 0px -8% 0px"
       });
 
-      targets.forEach((target) => observer.observe(target));
+      requestAnimationFrame(() => {
+        targets.forEach((target) => {
+          const rect = target.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+            target.classList.add("is-visible");
+          } else {
+            observer.observe(target);
+          }
+        });
+      });
     }
 
     mountYouTubeReel();
