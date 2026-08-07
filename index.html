@@ -481,6 +481,18 @@
       opacity: 0.82;
     }
 
+    .client-logo.is-color {
+      max-width: 86%;
+      max-height: 50px;
+      filter: none;
+      opacity: 1;
+    }
+
+    .client-logo.is-gutdoctor {
+      max-width: 62%;
+      max-height: 58px;
+    }
+
     .software-slot {
       gap: 6px;
       padding: 12px 8px;
@@ -1209,17 +1221,16 @@
       }
 
       .logo-grid {
-        display: flex;
-        overflow-x: auto;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        overflow: visible;
         gap: 0;
-        scroll-snap-type: inline mandatory;
       }
 
       .logo-slot {
-        flex: 0 0 84px;
+        width: 100%;
         min-height: 58px;
         border-right: 1px solid rgba(242, 238, 232, 0.1);
-        scroll-snap-align: start;
         font-size: 0.68rem;
       }
 
@@ -1333,7 +1344,7 @@
       }
 
       .logo-slot {
-        flex-basis: 78px;
+        width: 100%;
         min-height: 54px;
       }
 
@@ -1573,8 +1584,8 @@
         <div class="logo-group">
           <h3>Empresas / clientes</h3>
           <div class="logo-grid">
-            <div class="logo-slot"><img class="client-logo" src="Iconos/GUTDOCTOR.png" alt="Gutdoctor"></div>
-            <div class="logo-slot"><img class="client-logo" src="Iconos/SABANA360.png?v=20260806-final" alt="Sabana 360"></div>
+            <div class="logo-slot"><img class="client-logo is-color is-gutdoctor" src="Iconos/GUTDOCTOR.png?v=20260806-clean2" alt="Gutdoctor"></div>
+            <div class="logo-slot"><img class="client-logo is-color" src="Iconos/SABANA360.png?v=20260806-final2" alt="Sabana 360"></div>
             <div class="logo-slot"><img class="client-logo" src="Iconos/JORGEBARON.png" alt="Jorge Barón"></div>
             <div class="logo-slot"><img class="client-logo" src="Iconos/398.png" alt="398"></div>
           </div>
