@@ -36,10 +36,13 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
       margin: 0;
+      width: 100%;
+      max-width: 100%;
       color: var(--white);
       background:
         radial-gradient(circle at 82% 8%, rgba(23, 76, 72, 0.2), transparent 27rem),
@@ -494,6 +497,7 @@
       gap: 0;
       border: 1px solid rgba(242, 238, 232, 0.14);
       background: transparent;
+      overflow: hidden;
     }
 
     .logo-slot {
@@ -502,6 +506,8 @@
       width: 100%;
       height: 72px;
       min-width: 0;
+      min-height: 0;
+      overflow: hidden;
       border-right: 1px solid rgba(242, 238, 232, 0.12);
       background: transparent;
       color: rgba(242, 238, 232, 0.68);
@@ -540,6 +546,9 @@
     .software-slot {
       gap: 6px;
       padding: 12px 8px;
+      grid-template-rows: 42px auto;
+      align-content: center;
+      justify-items: center;
     }
 
     .software-mark {
@@ -700,9 +709,43 @@
       background: #b29957;
     }
 
+    .footer .section-tag::before {
+      background: currentColor;
+    }
+
     .carousel-stage {
       position: relative;
       padding-inline: 2px;
+      max-width: 100%;
+    }
+
+    .carousel-stage::before,
+    .carousel-stage::after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      width: clamp(34px, 8vw, 72px);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .carousel-stage::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(5, 5, 5, 0.62), rgba(5, 5, 5, 0.18) 58%, transparent);
+    }
+
+    .carousel-stage::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(5, 5, 5, 0.62), rgba(5, 5, 5, 0.18) 58%, transparent);
+    }
+
+    .carousel-stage.is-scrollable:not(.is-at-start)::before,
+    .carousel-stage.is-scrollable:not(.is-at-end)::after {
+      opacity: 1;
     }
 
     .carousel-edge {
@@ -807,11 +850,13 @@
       grid-auto-flow: column;
       grid-auto-columns: minmax(168px, 16vw);
       gap: 12px;
+      max-width: 100%;
       overflow-x: auto;
       overscroll-behavior-inline: contain;
       scroll-behavior: auto;
       scroll-padding-inline: 8px;
       padding: 18px 10px 38px;
+      contain: layout paint;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -1490,6 +1535,7 @@
       opacity: 1;
       transform: translate3d(0, 0, 0);
       filter: blur(0);
+      will-change: auto;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1551,6 +1597,42 @@
     }
 
     @media (max-width: 720px), (max-width: 920px) and (max-height: 520px) {
+      .page-intro .topbar-wrap,
+      .page-intro .hero .kicker,
+      .page-intro .hero h1,
+      .page-intro .hero-copy,
+      .page-intro .hero-meta,
+      .page-intro .hero-visual {
+        filter: none;
+        animation-duration: 680ms;
+        will-change: opacity, transform;
+      }
+
+      .page-intro .topbar-wrap,
+      .page-intro .hero .kicker {
+        animation-delay: 40ms;
+        transform: translate3d(0, 8px, 0);
+      }
+
+      .page-intro .hero h1,
+      .page-intro .hero-copy,
+      .page-intro .hero-meta,
+      .page-intro .hero-visual {
+        animation-delay: 90ms;
+        transform: translate3d(0, 14px, 0);
+      }
+
+      .reveal-ready [data-reveal],
+      .reveal-ready [data-reveal="left"],
+      .reveal-ready [data-reveal="right"] {
+        filter: none;
+        transform: translate3d(0, 18px, 0);
+        transition:
+          opacity 520ms ease,
+          transform 560ms var(--ease-out);
+        will-change: opacity, transform;
+      }
+
       .topbar {
         position: relative;
         min-height: 54px;
@@ -1679,7 +1761,7 @@
       .logo-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        overflow: visible;
+        overflow: hidden;
         gap: 0;
       }
 
@@ -1692,6 +1774,10 @@
 
       .software-slot {
         padding: 9px 6px;
+      }
+
+      .client-logo.is-gutdoctor {
+        max-height: 50px;
       }
 
       .software-mark {
@@ -1723,13 +1809,24 @@
         display: none;
       }
 
+      .carousel-stage::before,
+      .carousel-stage::after {
+        display: block;
+      }
+
       .carousel {
         grid-auto-columns: minmax(155px, 48vw);
         gap: 10px;
         padding-bottom: 12px;
         -webkit-overflow-scrolling: touch;
+        scroll-snap-type: inline proximity;
+        scroll-behavior: smooth;
         scrollbar-width: none;
         -ms-overflow-style: none;
+      }
+
+      .project-card {
+        scroll-snap-align: start;
       }
 
       .carousel::-webkit-scrollbar,
@@ -1758,18 +1855,45 @@
       }
 
       .modal {
-        padding: 12px 52px;
+        align-items: center;
+        overflow: hidden;
+        height: 100dvh;
+        min-height: 100dvh;
+        padding: max(12px, env(safe-area-inset-top)) 48px max(12px, env(safe-area-inset-bottom));
+        backdrop-filter: blur(8px);
       }
 
       .modal-panel {
-        max-height: 94vh;
-        padding: 14px;
+        width: min(100%, 330px);
+        max-height: calc(100dvh - 96px);
+        gap: 12px;
+        overflow: auto;
+        overscroll-behavior: contain;
+        padding: 12px;
+        transform: none;
+        transition: opacity 260ms ease;
+        will-change: opacity;
+      }
+
+      .modal.is-open .modal-panel,
+      .modal.is-closing .modal-panel,
+      .modal.is-open .modal-panel.is-switching {
+        transform: none;
       }
 
       .modal-nav {
         width: 36px;
         height: 36px;
         font-size: 1.45rem;
+      }
+
+      .modal-close {
+        position: fixed;
+        top: max(12px, env(safe-area-inset-top));
+        right: 8px;
+        width: 36px;
+        height: 36px;
+        z-index: 4;
       }
 
       .modal-prev {
@@ -1781,11 +1905,52 @@
       }
 
       .modal-media {
-        min-height: 300px;
+        min-height: 0;
+      }
+
+      .modal-media.is-poster {
+        width: min(210px, 64vw);
+        max-height: 42dvh;
+      }
+
+      .modal-media.is-embed {
+        width: min(260px, calc(100vw - 104px));
+        min-height: min(450px, calc(100dvh - 116px));
+        max-height: calc(100dvh - 116px);
+      }
+
+      .modal-copy {
+        min-width: 0;
+        max-width: 100%;
+        padding-top: 0;
+        overflow: hidden;
+      }
+
+      .modal-title {
+        margin-top: 8px;
+        font-size: clamp(1.25rem, 7vw, 1.9rem);
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      .modal-title.is-long {
+        font-size: clamp(1rem, 5.3vw, 1.32rem);
+      }
+
+      .modal-logline {
+        margin-top: 10px;
+        font-size: 0.78rem;
+        line-height: 1.48;
+        max-width: 100%;
+        overflow-wrap: break-word;
+      }
+
+      .modal-actions {
+        margin-top: 14px;
       }
 
       .modal-panel.is-social {
-        width: min(430px, 100%);
+        width: min(290px, 100%);
       }
     }
 
@@ -1928,7 +2093,7 @@
       .logo-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        overflow: visible;
+        overflow: hidden;
       }
 
       .logo-slot {
@@ -2422,10 +2587,12 @@
       if (!("IntersectionObserver" in window)) return;
 
       const revealItems = [];
+      const compactReveal = isMobileViewport();
+      const revealDelay = (delay) => compactReveal ? Math.min(Math.round(delay * 0.12), 120) : delay;
       const addReveal = (element, delay = 0, direction = "up") => {
         if (!element) return;
         element.dataset.reveal = direction;
-        element.style.setProperty("--reveal-delay", `${delay}ms`);
+        element.style.setProperty("--reveal-delay", `${revealDelay(delay)}ms`);
         revealItems.push(element);
       };
 
@@ -2458,7 +2625,10 @@
           entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
         });
-      }, {
+      }, compactReveal ? {
+        threshold: 0.01,
+        rootMargin: "0px 0px 10% 0px"
+      } : {
         threshold: 0.08,
         rootMargin: "0px 0px -18% 0px"
       });
@@ -2680,6 +2850,13 @@
       const atStart = carousel.scrollLeft <= 2;
       const atEnd = carousel.scrollLeft >= maxScroll - 2;
       const isScrollable = maxScroll > 2;
+      const stage = carousel.closest(".carousel-stage");
+
+      if (stage) {
+        stage.classList.toggle("is-scrollable", isScrollable);
+        stage.classList.toggle("is-at-start", !isScrollable || atStart);
+        stage.classList.toggle("is-at-end", !isScrollable || atEnd);
+      }
 
       if (!carouselAnimations.has(carousel)) {
         carouselStops.set(carousel, getNearestCarouselStop(carousel));
@@ -2778,7 +2955,7 @@
     setupScrollReveal();
     window.setTimeout(() => {
       document.body.classList.remove("page-intro");
-    }, 4600);
+    }, isMobileViewport() ? 1100 : 4600);
   </script>
 </body>
 </html>
