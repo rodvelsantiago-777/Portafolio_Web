@@ -37,6 +37,7 @@
     html {
       scroll-behavior: smooth;
       overflow-x: hidden;
+      background: #080808;
     }
 
     body {
@@ -50,6 +51,7 @@
         radial-gradient(circle at 72% 58%, rgba(72, 70, 62, 0.13), transparent 34rem),
         linear-gradient(132deg, rgba(36, 40, 38, 0.42), transparent 42%),
         linear-gradient(180deg, #070707 0%, #10100f 34%, #080909 67%, #090707 100%);
+      background-color: #080808;
       font-family: "Inter", Arial, sans-serif;
       overflow-x: hidden;
     }
@@ -598,6 +600,7 @@
       --section-accent: rgba(154, 148, 140, 0.44);
       --section-accent-soft: rgba(154, 148, 140, 0.12);
       padding: clamp(34px, 6vw, 64px) 0;
+      background-color: #10100f;
     }
 
     .work-section::before {
@@ -719,35 +722,6 @@
       max-width: 100%;
     }
 
-    .carousel-stage::before,
-    .carousel-stage::after {
-      content: "";
-      position: absolute;
-      display: none;
-      top: 0;
-      bottom: 0;
-      z-index: 2;
-      width: clamp(34px, 8vw, 72px);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 180ms ease;
-    }
-
-    .carousel-stage::before {
-      left: 0;
-      background: linear-gradient(90deg, rgba(5, 5, 5, 0.62), rgba(5, 5, 5, 0.18) 58%, transparent);
-    }
-
-    .carousel-stage::after {
-      right: 0;
-      background: linear-gradient(270deg, rgba(5, 5, 5, 0.62), rgba(5, 5, 5, 0.18) 58%, transparent);
-    }
-
-    .carousel-stage.is-scrollable:not(.is-at-start)::before,
-    .carousel-stage.is-scrollable:not(.is-at-end)::after {
-      opacity: 1;
-    }
-
     .carousel-edge {
       position: absolute;
       top: 2px;
@@ -856,7 +830,6 @@
       scroll-behavior: auto;
       scroll-padding-inline: 8px;
       padding: 18px 10px 38px;
-      contain: layout paint;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -1597,6 +1570,10 @@
     }
 
     @media (max-width: 720px), (max-width: 920px) and (max-height: 520px) {
+      html {
+        scroll-behavior: auto;
+      }
+
       .page-intro .topbar-wrap,
       .page-intro .hero .kicker,
       .page-intro .hero h1,
@@ -1809,24 +1786,13 @@
         display: none;
       }
 
-      .carousel-stage::before,
-      .carousel-stage::after {
-        display: block;
-      }
-
       .carousel {
         grid-auto-columns: minmax(155px, 48vw);
         gap: 10px;
         padding-bottom: 12px;
         -webkit-overflow-scrolling: touch;
-        scroll-snap-type: inline proximity;
-        scroll-behavior: smooth;
         scrollbar-width: none;
         -ms-overflow-style: none;
-      }
-
-      .project-card {
-        scroll-snap-align: start;
       }
 
       .carousel::-webkit-scrollbar,
@@ -2850,13 +2816,6 @@
       const atStart = carousel.scrollLeft <= 2;
       const atEnd = carousel.scrollLeft >= maxScroll - 2;
       const isScrollable = maxScroll > 2;
-      const stage = carousel.closest(".carousel-stage");
-
-      if (stage) {
-        stage.classList.toggle("is-scrollable", isScrollable);
-        stage.classList.toggle("is-at-start", !isScrollable || atStart);
-        stage.classList.toggle("is-at-end", !isScrollable || atEnd);
-      }
 
       if (!carouselAnimations.has(carousel)) {
         carouselStops.set(carousel, getNearestCarouselStop(carousel));
