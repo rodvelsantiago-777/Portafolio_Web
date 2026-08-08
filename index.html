@@ -20,8 +20,8 @@
       --muted-dark: #706860;
       --red: #c91414;
       --red-soft: #6d1515;
-      --gold: #b89b67;
-      --smoke: #34322f;
+      --gold: #9a948c;
+      --smoke: #2b2c2a;
       --line: rgba(242, 238, 232, 0.13);
       --line-strong: rgba(242, 238, 232, 0.22);
       --shadow: 0 18px 58px rgba(0, 0, 0, 0.52);
@@ -42,10 +42,11 @@
       margin: 0;
       color: var(--white);
       background:
-        radial-gradient(circle at 78% 9%, rgba(184, 155, 103, 0.2), transparent 22rem),
-        radial-gradient(circle at 8% 24%, rgba(94, 21, 27, 0.26), transparent 26rem),
-        linear-gradient(122deg, rgba(36, 38, 35, 0.36), transparent 44%),
-        linear-gradient(180deg, #050505 0%, #0b0b0a 42%, #070606 100%);
+        radial-gradient(circle at 82% 8%, rgba(23, 76, 72, 0.2), transparent 27rem),
+        radial-gradient(circle at 6% 18%, rgba(88, 23, 30, 0.2), transparent 30rem),
+        radial-gradient(circle at 72% 58%, rgba(72, 70, 62, 0.13), transparent 34rem),
+        linear-gradient(132deg, rgba(36, 40, 38, 0.42), transparent 42%),
+        linear-gradient(180deg, #070707 0%, #10100f 34%, #080909 67%, #090707 100%);
       font-family: "Inter", Arial, sans-serif;
       overflow-x: hidden;
     }
@@ -56,10 +57,11 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.32;
+      opacity: 0.38;
       background:
-        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 6px),
-        repeating-linear-gradient(90deg, rgba(184, 155, 103, 0.035) 0 1px, transparent 1px 78px);
+        linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.045) 38%, transparent 54%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.034) 0 1px, transparent 1px 6px),
+        repeating-linear-gradient(90deg, rgba(190, 190, 184, 0.026) 0 1px, transparent 1px 78px);
       background-size: 100% 100%, 78px 78px;
       mask-image: linear-gradient(to bottom, black, transparent 78%);
     }
@@ -71,9 +73,10 @@
       z-index: -1;
       pointer-events: none;
       background:
-        radial-gradient(circle at 0% 6%, rgba(94, 21, 27, 0.22), transparent 22rem),
-        radial-gradient(circle at 100% 8%, rgba(23, 45, 43, 0.18), transparent 24rem),
-        linear-gradient(180deg, rgba(184, 155, 103, 0.06), transparent 28%, rgba(58, 15, 18, 0.2) 100%);
+        radial-gradient(circle at 4% 10%, rgba(105, 26, 28, 0.17), transparent 25rem),
+        radial-gradient(circle at 100% 10%, rgba(21, 74, 68, 0.18), transparent 28rem),
+        radial-gradient(circle at 50% 96%, rgba(58, 47, 43, 0.16), transparent 34rem),
+        linear-gradient(180deg, rgba(165, 162, 150, 0.04), transparent 34%, rgba(35, 31, 30, 0.2) 100%);
     }
 
     a {
@@ -98,7 +101,7 @@
       width: 100%;
       border-bottom: 1px solid var(--line);
       background:
-        linear-gradient(90deg, rgba(44, 20, 17, 0.88), rgba(5, 5, 5, 0.9) 36%, rgba(8, 19, 18, 0.86)),
+        linear-gradient(90deg, rgba(20, 20, 19, 0.92), rgba(5, 5, 5, 0.9) 42%, rgba(10, 18, 17, 0.88)),
         rgba(5, 5, 5, 0.82);
       backdrop-filter: blur(16px);
     }
@@ -209,9 +212,10 @@
       inset: 0 calc(50% - 50vw);
       z-index: -1;
       background:
-        linear-gradient(180deg, rgba(42, 28, 20, 0.86) 0%, rgba(20, 17, 14, 0.84) 72%, rgba(14, 13, 12, 0.9) 100%),
-        radial-gradient(circle at 100% 0%, rgba(23, 45, 43, 0.22), transparent 28rem),
-        radial-gradient(circle at 0% 10%, rgba(94, 21, 27, 0.2), transparent 24rem);
+        radial-gradient(circle at 82% 12%, rgba(24, 78, 72, 0.24), transparent 30rem),
+        radial-gradient(circle at 4% 12%, rgba(104, 18, 22, 0.22), transparent 28rem),
+        radial-gradient(circle at 62% 92%, rgba(78, 67, 54, 0.16), transparent 30rem),
+        linear-gradient(180deg, rgba(18, 18, 17, 0.9) 0%, rgba(14, 15, 14, 0.82) 58%, rgba(11, 11, 10, 0.94) 100%);
     }
 
     .hero::after,
@@ -226,7 +230,7 @@
       height: 92px;
       pointer-events: none;
       background:
-        linear-gradient(90deg, transparent, rgba(184, 155, 103, 0.28) 18%, rgba(201, 20, 20, 0.18) 50%, rgba(184, 155, 103, 0.18) 82%, transparent),
+        linear-gradient(90deg, transparent, rgba(146, 146, 138, 0.18) 18%, rgba(201, 20, 20, 0.12) 50%, rgba(146, 146, 138, 0.12) 82%, transparent),
         linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.24));
       background-size: 100% 1px, 100% 100%;
       background-position: bottom, center;
@@ -250,6 +254,10 @@
       width: 28px;
       height: 1px;
       background: var(--red);
+    }
+
+    .kicker::before {
+      background: currentColor;
     }
 
     h1 {
@@ -447,9 +455,20 @@
       inset: 0 calc(50% - 50vw);
       z-index: -1;
       background:
-        radial-gradient(circle at 18% 15%, rgba(184, 155, 103, 0.14), transparent 22rem),
-        radial-gradient(circle at 84% 85%, rgba(23, 45, 43, 0.16), transparent 24rem),
-        linear-gradient(180deg, rgba(14, 13, 12, 0.9) 0%, rgba(18, 16, 14, 0.78) 50%, rgba(20, 13, 13, 0.88) 100%);
+        radial-gradient(circle at 18% 20%, rgba(180, 180, 170, 0.08), transparent 25rem),
+        radial-gradient(circle at 82% 60%, rgba(88, 96, 92, 0.12), transparent 30rem),
+        linear-gradient(180deg, rgba(13, 13, 13, 0.94) 0%, rgba(33, 34, 32, 0.9) 42%, rgba(38, 39, 36, 0.88) 68%, rgba(18, 18, 17, 0.94) 100%);
+    }
+
+    .logo-band::after {
+      bottom: -1px;
+      height: 96px;
+      background:
+        radial-gradient(ellipse at 50% 96%, rgba(18, 18, 17, 0.18), transparent 38rem),
+        linear-gradient(180deg, transparent 0%, rgba(8, 8, 8, 0.18) 70%, rgba(8, 8, 8, 0.34) 100%);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .logo-group {
@@ -471,19 +490,20 @@
     .logo-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
       gap: 0;
-      border: 1px solid rgba(242, 238, 232, 0.11);
-      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(242, 238, 232, 0.14);
+      background: transparent;
     }
 
     .logo-slot {
       display: grid;
       place-items: center;
-      min-height: 72px;
-      border-right: 1px solid rgba(242, 238, 232, 0.1);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 58%),
-        rgba(8, 8, 8, 0.18);
+      width: 100%;
+      height: 72px;
+      min-width: 0;
+      border-right: 1px solid rgba(242, 238, 232, 0.12);
+      background: transparent;
       color: rgba(242, 238, 232, 0.68);
       font-family: "Oswald", "Arial Narrow", sans-serif;
       font-size: clamp(0.78rem, 1.2vw, 1rem);
@@ -499,20 +519,22 @@
       max-width: 78%;
       max-height: 42px;
       object-fit: contain;
-      filter: grayscale(1) brightness(1.65) contrast(0.9);
-      opacity: 0.82;
+      filter: brightness(0) invert(1) contrast(1.35);
+      opacity: 1;
     }
 
     .client-logo.is-color {
       max-width: 86%;
       max-height: 50px;
-      filter: none;
+      filter:
+        drop-shadow(0 1px 0 rgba(242, 238, 232, 0.26))
+        drop-shadow(0 8px 18px rgba(0, 0, 0, 0.36));
       opacity: 1;
     }
 
     .client-logo.is-gutdoctor {
-      max-width: 62%;
-      max-height: 58px;
+      max-width: 74%;
+      max-height: 62px;
     }
 
     .software-slot {
@@ -526,7 +548,7 @@
       width: 42px;
       height: 42px;
       border: 1px solid currentColor;
-      background: rgba(0, 0, 0, 0.26);
+      background: rgba(0, 0, 0, 0.34);
       font-family: "Inter", Arial, sans-serif;
       font-size: 1rem;
       font-weight: 800;
@@ -564,6 +586,8 @@
     .work-section {
       position: relative;
       isolation: isolate;
+      --section-accent: rgba(154, 148, 140, 0.44);
+      --section-accent-soft: rgba(154, 148, 140, 0.12);
       padding: clamp(34px, 6vw, 64px) 0;
     }
 
@@ -573,19 +597,40 @@
       inset: 0 calc(50% - 50vw);
       z-index: -1;
       background:
-        radial-gradient(circle at 12% 22%, rgba(78, 16, 22, 0.28), transparent 24rem),
-        radial-gradient(circle at 94% 12%, rgba(184, 155, 103, 0.12), transparent 26rem),
-        linear-gradient(180deg, rgba(20, 13, 13, 0.9) 0%, rgba(12, 12, 12, 0.84) 54%, rgba(10, 18, 17, 0.88) 100%);
+        radial-gradient(circle at 12% 18%, rgba(74, 72, 67, 0.16), transparent 28rem),
+        radial-gradient(circle at 88% 22%, rgba(39, 49, 47, 0.13), transparent 30rem),
+        radial-gradient(circle at 50% 104%, rgba(64, 55, 50, 0.13), transparent 34rem),
+        linear-gradient(180deg, rgba(10, 11, 11, 0.94) 0%, rgba(14, 14, 13, 0.88) 52%, rgba(12, 12, 12, 0.93) 100%);
     }
 
-    .work-section:nth-of-type(4)::before {
+    #obras {
+      --section-accent: rgba(154, 148, 140, 0.46);
+      --section-accent-soft: rgba(154, 148, 140, 0.11);
+    }
+
+    #obras::before {
       background:
-        radial-gradient(circle at 88% 18%, rgba(18, 54, 52, 0.32), transparent 26rem),
-        radial-gradient(circle at 12% 78%, rgba(78, 16, 22, 0.2), transparent 24rem),
-        linear-gradient(180deg, rgba(10, 18, 17, 0.88) 0%, rgba(9, 10, 10, 0.82) 56%, rgba(28, 16, 13, 0.86) 100%);
+        radial-gradient(ellipse at 18% 40%, rgba(92, 88, 80, 0.2), transparent 34rem),
+        radial-gradient(ellipse at 72% 46%, rgba(48, 52, 50, 0.18), transparent 36rem),
+        radial-gradient(circle at 92% 18%, rgba(58, 43, 42, 0.1), transparent 28rem),
+        linear-gradient(180deg, rgba(10, 11, 12, 0.93) 0%, rgba(15, 15, 14, 0.86) 54%, rgba(12, 12, 12, 0.93) 100%);
+    }
+
+    #social {
+      --section-accent: rgba(154, 148, 140, 0.46);
+      --section-accent-soft: rgba(154, 148, 140, 0.11);
+    }
+
+    #social::before {
+      background:
+        radial-gradient(ellipse at 16% 42%, rgba(88, 84, 78, 0.18), transparent 33rem),
+        radial-gradient(ellipse at 80% 38%, rgba(50, 56, 53, 0.16), transparent 35rem),
+        radial-gradient(circle at 46% 88%, rgba(72, 64, 58, 0.12), transparent 32rem),
+        linear-gradient(180deg, rgba(10, 11, 11, 0.93) 0%, rgba(14, 14, 13, 0.86) 58%, rgba(12, 11, 11, 0.93) 100%);
     }
 
     .section-head {
+      position: relative;
       display: flex;
       align-items: end;
       justify-content: space-between;
@@ -593,37 +638,168 @@
       margin-bottom: 22px;
     }
 
+    .section-head::before {
+      content: "";
+      position: absolute;
+      left: -2.4rem;
+      top: 30%;
+      z-index: -1;
+      width: min(46vw, 560px);
+      height: clamp(58px, 7vw, 92px);
+      border-radius: 999px;
+      background:
+        radial-gradient(ellipse at 30% 58%, color-mix(in srgb, var(--section-accent) 34%, transparent), transparent 68%);
+      filter: blur(28px);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
     .section-title {
+      position: relative;
+      display: block;
+      z-index: 0;
+      width: fit-content;
       max-width: 780px;
       margin-top: 10px;
       font-size: clamp(1.9rem, 4.8vw, 4.25rem);
+      text-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
     }
 
-    .carousel-controls {
-      display: flex;
-      flex: 0 0 auto;
-      gap: 8px;
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: -0.09em;
+      right: -0.09em;
+      bottom: -0.03em;
+      height: 0.46em;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 28% 65%, color-mix(in srgb, var(--section-accent) 28%, transparent), transparent 68%),
+        linear-gradient(90deg, transparent 0%, var(--section-accent-soft) 18%, rgba(242, 238, 232, 0.04) 56%, transparent 100%);
+      border-radius: 999px;
+      filter: blur(16px);
+      opacity: 0.78;
+      transform: translateY(0.08em);
     }
 
-    .icon-button {
+    .work-section .section-tag {
+      color: #9a948c;
+    }
+
+    .work-section .section-tag::before {
+      background: #9a948c;
+      box-shadow: 0 0 12px var(--section-accent-soft);
+      opacity: 0.8;
+    }
+
+    .recognition-section .section-tag {
+      color: #b29957;
+    }
+
+    .recognition-section .section-tag::before {
+      background: #b29957;
+    }
+
+    .carousel-stage {
+      position: relative;
+      padding-inline: 2px;
+    }
+
+    .carousel-edge {
+      position: absolute;
+      top: 2px;
+      bottom: 16px;
+      z-index: 3;
       display: grid;
       place-items: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.035);
+      width: clamp(48px, 5.2vw, 70px);
+      border: 0;
+      padding: 0;
+      color: rgba(242, 238, 232, 0.9);
+      background: transparent;
       cursor: pointer;
-      font-size: 1.4rem;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: clamp(2.7rem, 3.8vw, 4.5rem);
+      font-weight: 300;
       line-height: 1;
-      transition: border-color 180ms ease, background 180ms ease, transform 220ms var(--ease-out);
+      opacity: 1;
+      isolation: isolate;
+      text-shadow:
+        0 0 10px rgba(0, 0, 0, 1),
+        0 0 28px rgba(0, 0, 0, 1),
+        0 12px 28px rgba(0, 0, 0, 0.9);
+      transition: opacity 220ms ease, color 180ms ease, transform 180ms var(--ease-out);
     }
 
-    .icon-button:hover,
-    .icon-button:focus-visible {
-      border-color: var(--red);
-      background: rgba(201, 20, 20, 0.16);
-      transform: translateY(-1px);
+    .carousel-edge::before,
+    .carousel-edge::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+    }
+
+    .carousel-edge::before {
+      inset: 0 -6px;
+      opacity: 0.68;
+    }
+
+    .carousel-edge::after {
+      top: 50%;
+      width: clamp(58px, 6.8vw, 104px);
+      height: clamp(118px, 14vw, 206px);
+      border-radius: 999px;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.56) 38%, rgba(0, 0, 0, 0.2) 64%, transparent 84%);
+      filter: blur(15px);
+      opacity: 0.78;
+      transform: translateY(-50%);
+    }
+
+    .carousel-edge-prev {
+      left: 0;
+      justify-items: start;
+      padding-left: 10px;
+    }
+
+    .carousel-edge-prev::before {
+      background: linear-gradient(90deg, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.38) 44%, rgba(5, 5, 5, 0.12) 68%, transparent 86%);
+    }
+
+    .carousel-edge-prev::after {
+      left: 0;
+    }
+
+    .carousel-edge-next {
+      right: 0;
+      justify-items: end;
+      padding-right: 10px;
+    }
+
+    .carousel-edge-next::before {
+      background: linear-gradient(270deg, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.38) 44%, rgba(5, 5, 5, 0.12) 68%, transparent 86%);
+    }
+
+    .carousel-edge-next::after {
+      right: 0;
+    }
+
+    .carousel-edge:hover,
+    .carousel-edge:focus-visible {
+      color: var(--white);
+      transform: scale(1.04);
+    }
+
+    .carousel-edge:hover::before,
+    .carousel-edge:focus-visible::before,
+    .carousel-edge:hover::after,
+    .carousel-edge:focus-visible::after {
+      opacity: 1;
+    }
+
+    .carousel-edge.is-hidden {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .carousel {
@@ -633,11 +809,15 @@
       gap: 12px;
       overflow-x: auto;
       overscroll-behavior-inline: contain;
-      scroll-behavior: smooth;
-      scroll-snap-type: inline mandatory;
-      scroll-padding-inline: 2px;
-      padding: 2px 2px 16px;
-      scrollbar-color: var(--red) rgba(255, 255, 255, 0.08);
+      scroll-behavior: auto;
+      scroll-padding-inline: 8px;
+      padding: 18px 10px 38px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
     }
 
     .social-carousel {
@@ -652,8 +832,7 @@
       background: transparent;
       cursor: pointer;
       text-align: left;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
+      transform-origin: center;
       transition: transform 220ms var(--ease-out);
     }
 
@@ -661,26 +840,36 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 720 / 1280;
-      border: 1px solid var(--line);
+      border: 1px solid transparent;
+      border-image: linear-gradient(
+        150deg,
+        color-mix(in srgb, var(--accent-color, var(--line)) 42%, rgba(242, 238, 232, 0.52)) 0%,
+        color-mix(in srgb, var(--accent-color, var(--line)) 64%, #050505 14%) 22%,
+        rgba(242, 238, 232, 0.08) 48%,
+        color-mix(in srgb, var(--accent-color, var(--line)) 52%, rgba(242, 238, 232, 0.24)) 100%
+      ) 1;
       background-color: var(--poster-color, #262626);
-      background-image:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.12), transparent 38%),
-        linear-gradient(190deg, rgba(201, 20, 20, 0.18), transparent 48%),
-        var(--poster-image, none);
+      background-image: var(--poster-image, none);
       background-position: center;
       background-size: cover;
       transition: transform 320ms var(--ease-out), border-color 240ms ease, filter 280ms ease, box-shadow 280ms ease;
+      box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 20%, rgba(242, 238, 232, 0.1)),
+        inset 0 0 28px color-mix(in srgb, var(--accent-color, transparent) 7%, transparent),
+        0 0 18px color-mix(in srgb, var(--accent-color, transparent) 14%, transparent);
     }
 
     .poster::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 0 42%, rgba(0, 0, 0, 0.84) 100%);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12), transparent 38%),
+        linear-gradient(180deg, transparent 0 42%, rgba(0, 0, 0, 0.84) 100%);
     }
 
     .poster.has-image::before {
-      background: linear-gradient(180deg, transparent 0 70%, rgba(0, 0, 0, 0.16) 100%);
+      display: none;
     }
 
     .poster::after {
@@ -715,16 +904,24 @@
     .project-card:hover .poster,
     .project-card:focus-visible .poster {
       transform: translateY(-6px) scale(1.015);
-      border-color: rgba(201, 20, 20, 0.88);
-      filter: contrast(1.06) saturate(1.05);
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+      filter: contrast(1.03) saturate(1.02);
+      box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--accent-color, rgba(242, 238, 232, 0.65)) 22%, transparent),
+        inset 0 0 40px color-mix(in srgb, var(--accent-color, transparent) 9%, transparent),
+        0 0 28px color-mix(in srgb, var(--accent-color, transparent) 22%, transparent),
+        0 18px 44px rgba(0, 0, 0, 0.34);
     }
 
     .recognition-section::before {
       background:
-        radial-gradient(circle at 16% 14%, rgba(184, 155, 103, 0.2), transparent 24rem),
-        radial-gradient(circle at 84% 72%, rgba(78, 16, 22, 0.22), transparent 25rem),
-        linear-gradient(180deg, rgba(28, 16, 13, 0.88) 0%, rgba(12, 11, 10, 0.86) 54%, rgba(10, 17, 16, 0.88) 100%);
+        radial-gradient(circle at 76% 58%, rgba(73, 82, 47, 0.11), transparent 34rem),
+        radial-gradient(circle at 16% 18%, rgba(178, 153, 87, 0.1), transparent 28rem),
+        linear-gradient(180deg, rgba(14, 14, 13, 0.94) 0%, rgba(16, 16, 15, 0.9) 48%, rgba(10, 11, 11, 0.93) 100%);
+    }
+
+    .recognition-section {
+      --section-accent: rgba(178, 153, 87, 0.5);
+      --section-accent-soft: rgba(178, 153, 87, 0.13);
     }
 
     .recognition-grid {
@@ -741,9 +938,21 @@
     }
 
     .recognition-image {
+      position: relative;
       display: grid;
       place-items: center;
       width: 100%;
+    }
+
+    .recognition-image::before {
+      content: "";
+      position: absolute;
+      inset: -34% -46%;
+      z-index: -1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(86, 98, 50, 0.24), rgba(78, 90, 48, 0.13) 34%, rgba(45, 56, 34, 0.09) 58%, transparent 76%);
+      filter: blur(48px);
     }
 
     .recognition-image img {
@@ -751,7 +960,9 @@
       max-width: 100%;
       max-height: 210px;
       object-fit: contain;
-      filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.42));
+      filter:
+        drop-shadow(0 0 28px rgba(86, 98, 50, 0.18))
+        drop-shadow(0 18px 28px rgba(0, 0, 0, 0.42));
     }
 
     .recognition-copy {
@@ -782,6 +993,9 @@
     }
 
     .modal {
+      --ambient-a: #6e1423;
+      --ambient-b: #153a6b;
+      --ambient-c: #0a0a0a;
       position: fixed;
       inset: 0;
       z-index: 50;
@@ -790,19 +1004,28 @@
       justify-content: center;
       padding: clamp(14px, 3vw, 34px);
       background:
-        radial-gradient(circle at 78% 16%, rgba(201, 20, 20, 0.18), transparent 28rem),
-        rgba(0, 0, 0, 0.86);
+        radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--ambient-a) 24%, transparent), transparent 28rem),
+        radial-gradient(circle at 22% 78%, color-mix(in srgb, var(--ambient-b) 18%, transparent), transparent 30rem),
+        color-mix(in srgb, var(--ambient-c) 18%, rgba(0, 0, 0, 0.86));
       backdrop-filter: blur(16px);
       opacity: 0;
       pointer-events: none;
       visibility: hidden;
-      transition: opacity 280ms ease, visibility 280ms ease;
+      transition: opacity 380ms ease, visibility 0s linear 380ms;
     }
 
     .modal.is-open {
       opacity: 1;
       pointer-events: auto;
       visibility: visible;
+      transition-delay: 0s;
+    }
+
+    .modal.is-closing {
+      opacity: 0;
+      pointer-events: none;
+      visibility: visible;
+      transition: opacity 340ms ease, visibility 0s linear 340ms;
     }
 
     .modal-panel {
@@ -814,12 +1037,17 @@
       max-height: min(640px, 90vh);
       overflow: auto;
       border: 1px solid var(--line-strong);
-      background: linear-gradient(145deg, rgba(28, 18, 18, 0.95), rgba(6, 6, 6, 0.98));
-      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at 26% 30%, color-mix(in srgb, var(--ambient-a) 22%, transparent), transparent 24rem),
+        radial-gradient(circle at 84% 72%, color-mix(in srgb, var(--ambient-b) 16%, transparent), transparent 22rem),
+        linear-gradient(145deg, color-mix(in srgb, var(--ambient-c) 24%, rgba(22, 18, 17, 0.96)), rgba(6, 6, 6, 0.98));
+      box-shadow:
+        0 0 72px color-mix(in srgb, var(--ambient-a) 26%, transparent),
+        0 24px 80px rgba(0, 0, 0, 0.72);
       opacity: 0;
       padding: clamp(16px, 2.4vw, 28px);
       transform: translateY(18px) scale(0.975);
-      transition: opacity 360ms ease, transform 420ms var(--ease-out);
+      transition: opacity 440ms ease, transform 500ms var(--ease-out);
       will-change: opacity, transform;
     }
 
@@ -828,9 +1056,14 @@
       transform: translateY(0) scale(1);
     }
 
-    .modal.is-open .modal-media {
-      opacity: 1;
-      transform: scale(1);
+    .modal.is-closing .modal-panel {
+      opacity: 0;
+      transform: translateY(12px) scale(0.982);
+    }
+
+    .modal.is-open .modal-panel.is-switching {
+      opacity: 0;
+      transform: translateY(10px) scale(0.985);
     }
 
     .modal-panel.is-social {
@@ -839,7 +1072,9 @@
       justify-content: center;
       overflow: visible;
       padding: clamp(10px, 2vw, 14px);
-      background: rgba(5, 5, 5, 0.92);
+      background:
+        radial-gradient(circle at 50% 20%, color-mix(in srgb, var(--ambient-a) 22%, transparent), transparent 18rem),
+        rgba(5, 5, 5, 0.92);
     }
 
     .modal-panel.is-social .modal-copy {
@@ -882,8 +1117,19 @@
       cursor: pointer;
       font-size: 1.8rem;
       line-height: 1;
-      transform: translateY(-50%);
-      transition: border-color 180ms ease, background 180ms ease, transform 220ms var(--ease-out);
+      opacity: 0;
+      transform: translateY(-50%) scale(0.96);
+      transition: border-color 180ms ease, background 180ms ease, opacity 340ms ease, transform 380ms var(--ease-out);
+    }
+
+    .modal.is-open .modal-nav {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+
+    .modal.is-closing .modal-nav {
+      opacity: 0;
+      transform: translateY(-50%) scale(0.96);
     }
 
     .modal-nav:hover,
@@ -901,11 +1147,11 @@
       right: max(18px, calc((100vw - 960px) / 2 - 68px));
     }
 
-    .modal-panel.is-social .modal-prev {
+    .modal.is-social .modal-prev {
       left: max(18px, calc((100vw - 400px) / 2 - 68px));
     }
 
-    .modal-panel.is-social .modal-next {
+    .modal.is-social .modal-next {
       right: max(18px, calc((100vw - 400px) / 2 - 68px));
     }
 
@@ -913,15 +1159,43 @@
       position: relative;
       min-height: 300px;
       overflow: hidden;
-      border: 1px solid var(--line);
+      border: 1px solid transparent;
+      border-image: linear-gradient(
+        150deg,
+        color-mix(in srgb, var(--accent-color, var(--line)) 42%, rgba(242, 238, 232, 0.52)) 0%,
+        color-mix(in srgb, var(--accent-color, var(--line)) 64%, #050505 14%) 22%,
+        rgba(242, 238, 232, 0.08) 48%,
+        color-mix(in srgb, var(--accent-color, var(--line)) 52%, rgba(242, 238, 232, 0.24)) 100%
+      ) 1;
       background-color: var(--poster-color, #1b1b1b);
       background-image: var(--poster-image, none);
       background-position: center;
       background-size: cover;
+      box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 30%, rgba(242, 238, 232, 0.12)),
+        inset 0 0 34px color-mix(in srgb, var(--accent-color, transparent) 10%, transparent),
+        0 0 22px color-mix(in srgb, var(--accent-color, transparent) 18%, transparent),
+        0 0 52px color-mix(in srgb, var(--ambient-a) 22%, transparent);
       opacity: 0;
-      transform: scale(0.965);
-      transition: opacity 440ms ease 90ms, transform 520ms var(--ease-soft) 90ms;
+      transform: scale(0.975);
+      transition: opacity 460ms ease 90ms, transform 520ms var(--ease-soft) 90ms;
       will-change: opacity, transform;
+    }
+
+    .modal.is-open .modal-media {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .modal.is-closing .modal-media {
+      opacity: 0;
+      transform: scale(0.985);
+    }
+
+    .modal-panel.is-switching .modal-media {
+      opacity: 0;
+      transform: scale(0.985);
+      transition-delay: 0ms;
     }
 
     .modal-media.is-poster {
@@ -969,6 +1243,14 @@
     .modal-copy {
       align-self: start;
       padding-top: 4px;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 360ms ease, transform 420ms var(--ease-out);
+    }
+
+    .modal-panel.is-switching .modal-copy {
+      opacity: 0;
+      transform: translateY(8px);
     }
 
     .modal-label {
@@ -1028,62 +1310,6 @@
       margin-top: 0;
     }
 
-    .motion-ready .reveal-target {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 860ms ease, transform 940ms var(--ease-out);
-      transition-delay: var(--reveal-delay, 0ms);
-      will-change: opacity, transform;
-    }
-
-    .motion-ready .reveal-target.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes modalFade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes modalPanelIn {
-      from {
-        opacity: 0;
-        transform: translateY(14px) scale(0.985);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes modalMediaIn {
-      from {
-        opacity: 0;
-        transform: scale(0.972);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 1ms !important;
-      }
-
-      .motion-ready .reveal-target {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
     .footer-wrap {
       position: relative;
       overflow: hidden;
@@ -1095,11 +1321,13 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at 8% 12%, rgba(184, 155, 103, 0.14), transparent 24rem),
-        radial-gradient(circle at 92% 90%, rgba(72, 18, 22, 0.24), transparent 26rem),
-        linear-gradient(180deg, rgba(28, 16, 13, 0.86), rgba(9, 9, 9, 0.78) 46%, rgba(20, 10, 10, 0.9)),
-        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 120px),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.028), transparent);
+        radial-gradient(circle at 8% 12%, rgba(86, 24, 28, 0.16), transparent 26rem),
+        radial-gradient(circle at 92% 88%, rgba(27, 74, 66, 0.2), transparent 30rem),
+        radial-gradient(circle at 48% 0%, rgba(92, 90, 82, 0.11), transparent 32rem),
+        linear-gradient(135deg, rgba(34, 38, 37, 0.26), transparent 48%),
+        linear-gradient(180deg, rgba(14, 15, 15, 0.92), rgba(8, 9, 9, 0.84) 46%, rgba(13, 10, 11, 0.95)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.032) 0 1px, transparent 1px 120px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 7px);
     }
 
     .footer-wrap::after {
@@ -1107,7 +1335,7 @@
       position: absolute;
       inset: 0 0 auto;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184, 155, 103, 0.26), rgba(201, 20, 20, 0.14), transparent);
+      background: linear-gradient(90deg, transparent, rgba(146, 146, 138, 0.2), rgba(201, 20, 20, 0.1), transparent);
     }
 
     .footer {
@@ -1182,6 +1410,110 @@
     .social-link .fill-icon {
       fill: currentColor;
       stroke: none;
+    }
+
+    .page-intro .topbar-wrap,
+    .page-intro .hero .kicker,
+    .page-intro .hero h1,
+    .page-intro .hero-copy,
+    .page-intro .hero-meta,
+    .page-intro .hero-visual {
+      opacity: 0;
+      filter: blur(14px);
+      animation: pageIntro 2800ms var(--ease-soft) forwards;
+      will-change: opacity, transform, filter;
+    }
+
+    .page-intro .topbar-wrap {
+      transform: translate3d(0, -18px, 0);
+      animation-delay: 120ms;
+    }
+
+    .page-intro .hero .kicker {
+      transform: translate3d(-28px, 20px, 0);
+      animation-delay: 420ms;
+    }
+
+    .page-intro .hero h1 {
+      transform: translate3d(0, 38px, 0);
+      animation-delay: 700ms;
+    }
+
+    .page-intro .hero-copy {
+      transform: translate3d(0, 32px, 0);
+      animation-delay: 1080ms;
+    }
+
+    .page-intro .hero-meta {
+      transform: translate3d(0, 30px, 0);
+      animation-delay: 1320ms;
+    }
+
+    .page-intro .hero-visual {
+      transform: translate3d(34px, 28px, 0);
+      animation-delay: 900ms;
+    }
+
+    @keyframes pageIntro {
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+      }
+    }
+
+    .reveal-ready [data-reveal] {
+      opacity: 0;
+      transform: translate3d(0, 42px, 0);
+      filter: blur(12px);
+      transition:
+        opacity 2600ms var(--ease-soft),
+        transform 2600ms var(--ease-soft),
+        filter 2600ms var(--ease-soft);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal-ready.reveal-prep [data-reveal] {
+      transition: none;
+    }
+
+    .reveal-ready [data-reveal="left"] {
+      transform: translate3d(-38px, 26px, 0);
+    }
+
+    .reveal-ready [data-reveal="right"] {
+      transform: translate3d(38px, 26px, 0);
+    }
+
+    .reveal-ready [data-reveal].is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      filter: blur(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-intro .topbar-wrap,
+      .page-intro .hero .kicker,
+      .page-intro .hero h1,
+      .page-intro .hero-copy,
+      .page-intro .hero-meta,
+      .page-intro .hero-visual {
+        transform: none;
+        filter: none;
+        animation-duration: 1400ms;
+      }
+
+      .reveal-ready [data-reveal] {
+        opacity: 0;
+        transform: none;
+        filter: none;
+        transition: opacity 1400ms ease;
+      }
+
+      .reveal-ready [data-reveal].is-visible {
+        opacity: 1;
+      }
     }
 
     .sr-only {
@@ -1353,7 +1685,7 @@
 
       .logo-slot {
         width: 100%;
-        min-height: 58px;
+        height: 58px;
         border-right: 1px solid rgba(242, 238, 232, 0.1);
         font-size: 0.68rem;
       }
@@ -1387,7 +1719,7 @@
         font-size: clamp(2rem, 10vw, 2.8rem);
       }
 
-      .carousel-controls {
+      .carousel-edge {
         display: none;
       }
 
@@ -1426,7 +1758,7 @@
       }
 
       .modal {
-        padding: 12px 46px;
+        padding: 12px 52px;
       }
 
       .modal-panel {
@@ -1469,7 +1801,7 @@
 
       .logo-slot {
         width: 100%;
-        min-height: 54px;
+        height: 54px;
       }
 
       .logo-slot:last-child {
@@ -1490,7 +1822,7 @@
       }
 
       .modal {
-        padding-inline: 42px;
+        padding-inline: 52px;
       }
     }
 
@@ -1601,7 +1933,7 @@
 
       .logo-slot {
         width: 100%;
-        min-height: 50px;
+        height: 50px;
         border-bottom: 0;
         font-size: 0.6rem;
       }
@@ -1652,7 +1984,7 @@
     }
   </style>
 </head>
-<body>
+<body class="page-intro">
   <div class="topbar-wrap">
     <header class="topbar" aria-label="Navegación principal">
       <a class="brand" href="#inicio">SRV</a>
@@ -1764,12 +2096,12 @@
             <span class="section-tag">Ficción / Documental / Publicidad</span>
             <h2 class="section-title" id="works-title">Archivo audiovisual</h2>
           </div>
-          <div class="carousel-controls" aria-label="Controles de carrusel de proyectos">
-            <button class="icon-button" type="button" data-scroll="prev" data-target="audiovisual-carousel" aria-label="Ver proyectos anteriores">&lsaquo;</button>
-            <button class="icon-button" type="button" data-scroll="next" data-target="audiovisual-carousel" aria-label="Ver proyectos siguientes">&rsaquo;</button>
-          </div>
         </div>
-        <div class="carousel" id="audiovisual-carousel" aria-label="Carrusel de proyectos audiovisuales"></div>
+        <div class="carousel-stage">
+          <button class="carousel-edge carousel-edge-prev" type="button" data-scroll="prev" data-target="audiovisual-carousel" aria-label="Ver proyectos anteriores">&lsaquo;</button>
+          <div class="carousel" id="audiovisual-carousel" aria-label="Carrusel de proyectos audiovisuales"></div>
+          <button class="carousel-edge carousel-edge-next" type="button" data-scroll="next" data-target="audiovisual-carousel" aria-label="Ver proyectos siguientes">&rsaquo;</button>
+        </div>
       </section>
 
       <section class="work-section" id="social" aria-labelledby="social-title">
@@ -1778,12 +2110,12 @@
             <span class="section-tag">Vertical storytelling</span>
             <h2 class="section-title" id="social-title">Piezas para redes</h2>
           </div>
-          <div class="carousel-controls" aria-label="Controles de carrusel de redes">
-            <button class="icon-button" type="button" data-scroll="prev" data-target="social-carousel" aria-label="Ver reels anteriores">&lsaquo;</button>
-            <button class="icon-button" type="button" data-scroll="next" data-target="social-carousel" aria-label="Ver reels siguientes">&rsaquo;</button>
-          </div>
         </div>
-        <div class="carousel social-carousel" id="social-carousel" aria-label="Carrusel de reels de Instagram"></div>
+        <div class="carousel-stage">
+          <button class="carousel-edge carousel-edge-prev" type="button" data-scroll="prev" data-target="social-carousel" aria-label="Ver reels anteriores">&lsaquo;</button>
+          <div class="carousel social-carousel" id="social-carousel" aria-label="Carrusel de reels de Instagram"></div>
+          <button class="carousel-edge carousel-edge-next" type="button" data-scroll="next" data-target="social-carousel" aria-label="Ver reels siguientes">&rsaquo;</button>
+        </div>
       </section>
     </main>
   </div>
@@ -1836,10 +2168,10 @@
   </div>
 
   <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <button class="modal-nav modal-prev" type="button" data-modal-nav="prev" aria-label="Ver anterior">&lsaquo;</button>
+    <button class="modal-nav modal-next" type="button" data-modal-nav="next" aria-label="Ver siguiente">&rsaquo;</button>
     <div class="modal-panel" id="modal-panel">
       <button class="modal-close" type="button" aria-label="Cerrar ventana emergente">&times;</button>
-      <button class="modal-nav modal-prev" type="button" data-modal-nav="prev" aria-label="Ver anterior">&lsaquo;</button>
-      <button class="modal-nav modal-next" type="button" data-modal-nav="next" aria-label="Ver siguiente">&rsaquo;</button>
       <div class="modal-media" id="modal-media"></div>
       <div class="modal-copy" id="modal-copy">
         <span class="modal-label" id="modal-label">Proyecto</span>
@@ -1854,108 +2186,131 @@
   </div>
 
   <script>
+    function audiovisualProject(project) {
+      return {
+        type: "poster",
+        label: "Archivo audiovisual",
+        ...project,
+        number: String(project.number).padStart(2, "0")
+      };
+    }
+
     const audiovisualProjects = [
-      "#321112",
-      "#252525",
-      "#5a1717",
-      "#1d2426",
-      "#4b1d14",
-      "#2b2923",
-      "#701616",
-      "#151f22",
-      "#432112",
-      "#202020",
-      "#5a1014"
-    ].map((color, index) => ({
-      type: "poster",
-      label: "Archivo audiovisual",
-      title: `Título de la obra ${String(index + 1).padStart(2, "0")}`,
-      logline: "Una breve descripción de la historia irá aquí: protagonista, conflicto, tono y promesa emocional de la pieza.",
-      link: "https://example.com",
-      color,
-      number: String(index + 1).padStart(2, "0")
-    }));
-
-    Object.assign(audiovisualProjects[0], {
-      title: "Selección Sabana",
-      logline: "La previa al Mundial 2026 se vive entre risas, desafíos y mucho fútbol. Un programa que combina entretenimiento, concursos y la voz de los aficionados para celebrar el deporte desde una mirada fresca y divertida.",
-      thumbnail: "Posters/Seleccion_Sabana_POSTER.png",
-      link: "https://www.youtube.com/watch?v=MObDB5sxzCM"
-    });
-
-    Object.assign(audiovisualProjects[2], {
-      title: "GALÁN: Siempre Adelante",
-      logline: "Un recorrido por la vida y el legado de Luis Carlos Galán, explorando su historia desde los años universitarios hasta su magnicidio. Más allá de su trayectoria política, el documental revela la dimensión humana de una de las figuras más influyentes de la historia reciente de Colombia y reflexiona sobre el impacto que su legado sigue teniendo en la actualidad.",
-      thumbnail: "Posters/GALAN_SA_POSTER.png",
-      link: "https://youtu.be/BFTPUIJF-0A?si=a1G_VckHXdmQTs0j"
-    });
-
-    Object.assign(audiovisualProjects[3], {
-      title: "ANALÍ",
-      logline: "Todo parece un dibujo inocente, hasta que las preguntas comienzan a revelar lo que una niña aún no logra comprender. Concebido para el formato vertical y contado desde su perspectiva, ANALÍ construye un relato de suspenso y drama donde el horror no nace de lo que se ve, sino de lo que poco a poco sale a la luz.",
-      thumbnail: "Posters/Anali_POSTER.png",
-      link: "https://youtu.be/WePIfJbL3a8"
-    });
-
-    Object.assign(audiovisualProjects[1], {
-      title: "Voces de una Tradición",
-      logline: "Lo que comienza como un recorrido por el tradicional Almanaque Bristol se transforma en un homenaje a quienes han encontrado en el campo una forma de vida. Un documental que, entre humor, nostalgia y reflexión, celebra la memoria, las costumbres y la voz del campesino colombiano.",
-      thumbnail: "Posters/Bristol_POSTER.png?v=20260806-bristol",
-      link: "https://youtu.be/1DFtF3cKZW8"
-    });
-
-    Object.assign(audiovisualProjects[4], {
-      title: "Color y Cuerpo – Retrato a Andrés Felipe Rodríguez Velásquez",
-      logline: "A través de sus obras y sus reflexiones, Andrés Felipe Rodríguez Velásquez comparte la mirada de un artista en construcción. Un retrato documental sobre la creatividad, la identidad y el proceso de convertir las ideas en expresión.",
-      thumbnail: "Posters/Andres_POSTER.png",
-      link: "https://youtu.be/7SeyaSlMlvQ"
-    });
-
-    Object.assign(audiovisualProjects[5], {
-      title: "Prioridades",
-      logline: "Durante una entrevista laboral decisiva, una joven presencia una traición que amenaza con derrumbarlo todo. Entre el dolor y la incertidumbre, deberá decidir qué merece realmente su atención.",
-      thumbnail: "Posters/Prioridades_POSTER.png",
-      link: "https://youtu.be/XqTGQjTXPhA"
-    });
-
-    Object.assign(audiovisualProjects[6], {
-      title: "Memorias Rotas",
-      logline: "Entre recuerdos convertidos en objetos y emociones que se resisten a desaparecer, una joven emprende un viaje por su propia mente para desprenderse de un amor que nunca terminó de irse. Un drama melancólico sobre la memoria, el duelo y las personas que permanecen incluso cuando creemos haberlas olvidado.",
-      thumbnail: "Posters/Memorias_Rotas_POSTER.png",
-      link: "https://youtu.be/usQJLaEyAKg?si=8uQK08WsVn4Z1bAE"
-    });
-
-    Object.assign(audiovisualProjects[7], {
-      title: "Sin Relación Aparente",
-      logline: "Un disparo rompe el silencio. Tres personas despiertan atrapadas en un juego donde cada turno puede ser el último. Mientras la muerte se convierte en una posibilidad cada vez más cercana, viejas heridas y verdades ocultas comienzan a salir a la luz.",
-      thumbnail: "Posters/Sin_Relacion_Aparente_POSTER.png",
-      link: "https://youtu.be/pAsPHY6Ooyg",
-      btsLink: "https://youtu.be/iWt3ZhF7Sk4?si=1wXGkGasU0D2lXC_",
-      btsLabel: "Ver BTS"
-    });
-
-    Object.assign(audiovisualProjects[8], {
-      title: "Künstler Schatten",
-      logline: "Algunos crean para ser recordados. Otros convierten su obsesión en una forma de trascender. Künstler Schatten presenta el inquietante manifiesto de un hombre dispuesto a desafiar los límites entre el arte, la moral y la locura.",
-      thumbnail: "Posters/Kunstler_Schatten_POSTER.png",
-      link: "https://youtu.be/rDoSGt5zw5g"
-    });
-
-    Object.assign(audiovisualProjects[9], {
-      title: "ZOMBIES 4: Dawn of the Vampires - Behind the Choreography",
-      logline: "Behind the scenes que explora el proceso creativo detrás de las coreografías de ZOMBIES 4: Dawn of the Vampires, interpretadas por el artista Nicolás Alfonso, revelando el trabajo y la preparación que hacen posible cada puesta en escena.",
-      thumbnail: "Posters/Disney_POSTER.png",
-      link: "https://youtu.be/vnc1LUIiuak"
-    });
-
-    Object.assign(audiovisualProjects[10], {
-      title: "Vivir",
-      logline: "Frente a un río y con una llamada que amenaza con devolverla al pasado, una joven descubre que vivir también significa aprender a elegir.",
-      thumbnail: "Posters/Vivir_POSTER.png",
-      link: "https://youtu.be/n8QWp1_vDbU",
-      btsLink: "https://youtu.be/evMneACfgec",
-      btsLabel: "Ver BTS"
-    });
+      audiovisualProject({
+        number: 1,
+        title: "Selección Sabana",
+        logline: "La previa al Mundial 2026 se vive entre risas, desafíos y mucho fútbol. Un programa que combina entretenimiento, concursos y la voz de los aficionados para celebrar el deporte desde una mirada fresca y divertida.",
+        thumbnail: "Posters/Seleccion_Sabana_POSTER.png",
+        link: "https://www.youtube.com/watch?v=MObDB5sxzCM",
+        color: "#321112",
+        accentColor: "#153a6b",
+        ambientColors: ["#0f355f", "#0b6f82", "#07111a"]
+      }),
+      audiovisualProject({
+        number: 2,
+        title: "Voces de una Tradición",
+        logline: "Lo que comienza como un recorrido por el tradicional Almanaque Bristol se transforma en un homenaje a quienes han encontrado en el campo una forma de vida. Un documental que, entre humor, nostalgia y reflexión, celebra la memoria, las costumbres y la voz del campesino colombiano.",
+        thumbnail: "Posters/Bristol_POSTER.png?v=20260806-bristol",
+        link: "https://youtu.be/1DFtF3cKZW8",
+        color: "#252525",
+        accentColor: "#a35b2b",
+        ambientColors: ["#a35b2b", "#4f2712", "#1a0d07"]
+      }),
+      audiovisualProject({
+        number: 3,
+        title: "GALÁN: Siempre Adelante",
+        logline: "Un recorrido por la vida y el legado de Luis Carlos Galán, explorando su historia desde los años universitarios hasta su magnicidio. Más allá de su trayectoria política, el documental revela la dimensión humana de una de las figuras más influyentes de la historia reciente de Colombia y reflexiona sobre el impacto que su legado sigue teniendo en la actualidad.",
+        thumbnail: "Posters/GALAN_SA_POSTER.png",
+        link: "https://youtu.be/BFTPUIJF-0A?si=a1G_VckHXdmQTs0j",
+        color: "#5a1717",
+        accentColor: "#8f1430",
+        ambientColors: ["#8f1430", "#430815", "#170408"]
+      }),
+      audiovisualProject({
+        number: 4,
+        title: "ANALÍ",
+        logline: "Todo parece un dibujo inocente, hasta que las preguntas comienzan a revelar lo que una niña aún no logra comprender. Concebido para el formato vertical y contado desde su perspectiva, ANALÍ construye un relato de suspenso y drama donde el horror no nace de lo que se ve, sino de lo que poco a poco sale a la luz.",
+        thumbnail: "Posters/Anali_POSTER.png",
+        link: "https://youtu.be/WePIfJbL3a8",
+        color: "#1d2426",
+        accentColor: "#a35c7c",
+        ambientColors: ["#a35c7c", "#6f3f54", "#140d12"]
+      }),
+      audiovisualProject({
+        number: 5,
+        title: "Color y Cuerpo – Retrato a Andrés Felipe Rodríguez Velásquez",
+        logline: "A través de sus obras y sus reflexiones, Andrés Felipe Rodríguez Velásquez comparte la mirada de un artista en construcción. Un retrato documental sobre la creatividad, la identidad y el proceso de convertir las ideas en expresión.",
+        thumbnail: "Posters/Andres_POSTER.png",
+        link: "https://youtu.be/7SeyaSlMlvQ",
+        color: "#4b1d14",
+        accentColor: "#6b3f24",
+        ambientColors: ["#74451f", "#2f1c0d", "#14100b"]
+      }),
+      audiovisualProject({
+        number: 6,
+        title: "Prioridades",
+        logline: "Durante una entrevista laboral decisiva, una joven presencia una traición que amenaza con derrumbarlo todo. Entre el dolor y la incertidumbre, deberá decidir qué merece realmente su atención.",
+        thumbnail: "Posters/Prioridades_POSTER.png",
+        link: "https://youtu.be/XqTGQjTXPhA",
+        color: "#2b2923",
+        accentColor: "#6d7175",
+        ambientColors: ["#858678", "#3f403b", "#111211"]
+      }),
+      audiovisualProject({
+        number: 7,
+        title: "Memorias Rotas",
+        logline: "Entre recuerdos convertidos en objetos y emociones que se resisten a desaparecer, una joven emprende un viaje por su propia mente para desprenderse de un amor que nunca terminó de irse. Un drama melancólico sobre la memoria, el duelo y las personas que permanecen incluso cuando creemos haberlas olvidado.",
+        thumbnail: "Posters/Memorias_Rotas_POSTER.png",
+        link: "https://youtu.be/usQJLaEyAKg?si=8uQK08WsVn4Z1bAE",
+        color: "#701616",
+        accentColor: "#7542a0",
+        ambientColors: ["#7947b2", "#8a1a78", "#10091d"]
+      }),
+      audiovisualProject({
+        number: 8,
+        title: "Sin Relación Aparente",
+        logline: "Un disparo rompe el silencio. Tres personas despiertan atrapadas en un juego donde cada turno puede ser el último. Mientras la muerte se convierte en una posibilidad cada vez más cercana, viejas heridas y verdades ocultas comienzan a salir a la luz.",
+        thumbnail: "Posters/Sin_Relacion_Aparente_POSTER.png",
+        link: "https://youtu.be/pAsPHY6Ooyg",
+        btsLink: "https://youtu.be/iWt3ZhF7Sk4?si=1wXGkGasU0D2lXC_",
+        btsLabel: "Ver BTS",
+        color: "#151f22",
+        accentColor: "#5f6267",
+        ambientColors: ["#6a6866", "#3c3434", "#111111"]
+      }),
+      audiovisualProject({
+        number: 9,
+        title: "Künstler Schatten",
+        logline: "Algunos crean para ser recordados. Otros convierten su obsesión en una forma de trascender. Künstler Schatten presenta el inquietante manifiesto de un hombre dispuesto a desafiar los límites entre el arte, la moral y la locura.",
+        thumbnail: "Posters/Kunstler_Schatten_POSTER.png",
+        link: "https://youtu.be/rDoSGt5zw5g",
+        color: "#432112",
+        accentColor: "#931634",
+        ambientColors: ["#951833", "#52080e", "#170506"]
+      }),
+      audiovisualProject({
+        number: 10,
+        title: "ZOMBIES 4: Dawn of the Vampires - Behind the Choreography",
+        logline: "Behind the scenes que explora el proceso creativo detrás de las coreografías de ZOMBIES 4: Dawn of the Vampires, interpretadas por el artista Nicolás Alfonso, revelando el trabajo y la preparación que hacen posible cada puesta en escena.",
+        thumbnail: "Posters/Disney_POSTER.png",
+        link: "https://youtu.be/vnc1LUIiuak",
+        color: "#202020",
+        accentColor: "#5f9348",
+        ambientColors: ["#6f9844", "#2d4b25", "#10160d"]
+      }),
+      audiovisualProject({
+        number: 11,
+        title: "Vivir",
+        logline: "Frente a un río y con una llamada que amenaza con devolverla al pasado, una joven descubre que vivir también significa aprender a elegir.",
+        thumbnail: "Posters/Vivir_POSTER.png",
+        link: "https://youtu.be/n8QWp1_vDbU",
+        btsLink: "https://youtu.be/evMneACfgec",
+        btsLabel: "Ver BTS",
+        color: "#5a1014",
+        accentColor: "#1f704a",
+        ambientColors: ["#256f4e", "#6b6a3f", "#0b1710"]
+      })
+    ];
 
     const socialProjects = [
       {
@@ -1963,10 +2318,12 @@
         label: "Reel de Facebook",
         title: "Reel social 01",
         logline: "",
-        link: "https://www.facebook.com/share/r/1CuFeYoAST/",
-        embed: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1CuFeYoAST%2F&show_text=false&width=360",
+        link: "https://www.facebook.com/reel/1026016980039794/",
+        embed: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1026016980039794%2F&show_text=false&width=360",
         thumbnail: "Reels/CARMEN_1.jpg",
         color: "#202326",
+        accentColor: "#1F5E05",
+        ambientColors: ["#1F5E05", "#2d7a18", "#071407"],
         number: "01"
       },
       {
@@ -1978,6 +2335,8 @@
         embed: "https://www.instagram.com/p/DZqOIXbpM3e/embed",
         thumbnail: "Reels/SANTOBUNUELO_1.jpg",
         color: "#4b1114",
+        accentColor: "#d8b84f",
+        ambientColors: ["#d8b84f", "#9b6e22", "#1b1406"],
         number: "02"
       },
       {
@@ -1989,6 +2348,8 @@
         embed: "https://www.instagram.com/p/DJFtbY4O7FT/embed",
         thumbnail: "Reels/KPOINT_2.jpg",
         color: "#202326",
+        accentColor: "#c97a9a",
+        ambientColors: ["#c97a9a", "#7e405a", "#160b10"],
         number: "03"
       },
       {
@@ -2000,6 +2361,8 @@
         embed: "https://www.instagram.com/p/DJAfw6eSO3e/embed",
         thumbnail: "Reels/KPOINT_1.jpg",
         color: "#6b1717",
+        accentColor: "#c97a9a",
+        ambientColors: ["#c97a9a", "#7e405a", "#160b10"],
         number: "04"
       }
     ];
@@ -2016,6 +2379,7 @@
     let activeProjects = [];
     let activeProjectIndex = 0;
     let modalCloseTimer = 0;
+    let modalSwitchTimer = 0;
 
     function isMobileViewport() {
       return window.matchMedia("(max-width: 720px), (max-width: 920px) and (max-height: 520px)").matches;
@@ -2024,12 +2388,13 @@
     function createProjectCard(project, projects, index) {
       const button = document.createElement("button");
       const posterImage = project.thumbnail ? `url('${project.thumbnail}')` : "none";
+      const accentColor = project.accentColor || project.color;
 
       button.className = "project-card";
       button.type = "button";
       button.setAttribute("aria-label", `Abrir ${project.title}`);
       button.innerHTML = `
-        <div class="poster ${project.thumbnail ? "has-image" : ""}" data-number="${project.number}" style="--poster-color: ${project.color}; --poster-image: ${posterImage}"></div>
+        <div class="poster ${project.thumbnail ? "has-image" : ""}" data-number="${project.number}" style="--poster-color: ${project.color}; --poster-image: ${posterImage}; --accent-color: ${accentColor}"></div>
       `;
       button.addEventListener("click", () => {
         if ((project.type === "instagram" || project.type === "facebook") && isMobileViewport()) {
@@ -2044,7 +2409,83 @@
 
     function renderCarousel(id, projects) {
       const carousel = document.getElementById(id);
-      projects.forEach((project, index) => carousel.appendChild(createProjectCard(project, projects, index)));
+      if (!carousel) return;
+
+      const fragment = document.createDocumentFragment();
+      projects.forEach((project, index) => {
+        fragment.appendChild(createProjectCard(project, projects, index));
+      });
+      carousel.replaceChildren(fragment);
+    }
+
+    function setupScrollReveal() {
+      if (!("IntersectionObserver" in window)) return;
+
+      const revealItems = [];
+      const addReveal = (element, delay = 0, direction = "up") => {
+        if (!element) return;
+        element.dataset.reveal = direction;
+        element.style.setProperty("--reveal-delay", `${delay}ms`);
+        revealItems.push(element);
+      };
+
+      document.querySelectorAll(".logo-band .logo-group").forEach((group, index) => {
+        addReveal(group, index * 320, index === 0 ? "left" : "right");
+      });
+
+      document.querySelectorAll(".work-section").forEach((section) => {
+        addReveal(section.querySelector(".section-tag"), 0);
+        addReveal(section.querySelector(".section-title"), 320);
+        section.querySelectorAll(".recognition-card, .project-card").forEach((item, index) => {
+          addReveal(item, 700 + index * 165);
+        });
+      });
+
+      addReveal(document.querySelector(".footer .section-tag"), 0);
+      addReveal(document.querySelector(".footer-title"), 320);
+      addReveal(document.querySelector(".footer-line"), 520);
+      addReveal(document.querySelector(".footer-credit"), 700);
+      addReveal(document.querySelector(".footer-info"), 840, "right");
+
+      if (!revealItems.length) return;
+      document.body.classList.add("reveal-ready", "reveal-prep");
+      document.body.offsetHeight;
+      let revealScrollFrame = 0;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -18% 0px"
+      });
+
+      revealItems.forEach((item) => observer.observe(item));
+      const revealPassedItems = () => {
+        revealScrollFrame = 0;
+        const triggerLine = window.innerHeight * 0.88;
+        revealItems.forEach((item) => {
+          if (item.classList.contains("is-visible")) return;
+          if (item.getBoundingClientRect().top > triggerLine) return;
+          item.classList.add("is-visible");
+          observer.unobserve(item);
+        });
+      };
+
+      const queueRevealCheck = () => {
+        if (revealScrollFrame) return;
+        revealScrollFrame = window.requestAnimationFrame(revealPassedItems);
+      };
+
+      window.requestAnimationFrame(() => {
+        document.body.classList.remove("reveal-prep");
+        revealPassedItems();
+      });
+      window.addEventListener("scroll", queueRevealCheck, { passive: true });
+      window.addEventListener("resize", queueRevealCheck);
     }
 
     function mountYouTubeReel() {
@@ -2055,7 +2496,7 @@
         frame.innerHTML = `
           <div class="youtube-fallback">
             <strong>Reel bloqueado por YouTube</strong>
-            <span>Para reproducirlo dentro de la página, abre el portafolio con el archivo abrir_portafolio.bat.</span>
+            <span>YouTube bloquea algunos embeds cuando el portafolio se abre como archivo local.</span>
             <a href="https://www.youtube.com/watch?v=AtaoGcuV1j4" target="_blank" rel="noreferrer">Ver respaldo</a>
           </div>
         `;
@@ -2075,11 +2516,9 @@
       frame.appendChild(iframe);
     }
 
-    function openProject(project, projects = activeProjects, index = activeProjectIndex) {
-      window.clearTimeout(modalCloseTimer);
-      activeProjects = projects;
-      activeProjectIndex = index;
+    function renderModalProject(project) {
       const isSocialProject = project.type === "instagram" || project.type === "facebook";
+      modal.classList.toggle("is-social", isSocialProject);
       modalPanel.classList.toggle("is-social", isSocialProject);
       modalLabel.textContent = project.label;
       modalTitle.textContent = project.title;
@@ -2090,8 +2529,13 @@
       modalBtsLink.href = project.btsLink || "#";
       modalBtsLink.textContent = project.btsLabel || "Ver BTS";
       modalBtsLink.style.display = project.btsLink ? "inline-flex" : "none";
+      const ambientColors = project.ambientColors || [project.accentColor || project.color, project.color, "#080808"];
+      modal.style.setProperty("--ambient-a", ambientColors[0]);
+      modal.style.setProperty("--ambient-b", ambientColors[1]);
+      modal.style.setProperty("--ambient-c", ambientColors[2]);
       modalMedia.className = "modal-media";
       modalMedia.style.setProperty("--poster-color", project.color);
+      modalMedia.style.setProperty("--accent-color", project.accentColor || project.color);
       modalMedia.style.setProperty("--poster-image", project.thumbnail ? `url('${project.thumbnail}')` : "none");
       modalMedia.innerHTML = "";
 
@@ -2102,44 +2546,186 @@
         iframe.title = project.title;
         iframe.loading = "lazy";
         iframe.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
         modalMedia.appendChild(iframe);
       } else {
         modalMedia.classList.add("is-poster");
         if (project.thumbnail) modalMedia.classList.add("is-image");
         modalMedia.dataset.number = project.number;
       }
+    }
 
-      modal.classList.add("is-open");
+    function openProject(project, projects = activeProjects, index = activeProjectIndex) {
+      window.clearTimeout(modalCloseTimer);
+      window.clearTimeout(modalSwitchTimer);
+      activeProjects = projects;
+      activeProjectIndex = index;
+      modal.classList.remove("is-closing");
+      modalPanel.classList.remove("is-switching");
+      renderModalProject(project);
+
       modal.setAttribute("aria-hidden", "false");
+      modal.classList.add("is-open");
       document.body.style.overflow = "hidden";
       closeButton.focus();
     }
 
     function navigateModal(direction) {
       if (!activeProjects.length) return;
+      if (modalPanel.classList.contains("is-switching")) return;
       const nextIndex = (activeProjectIndex + direction + activeProjects.length) % activeProjects.length;
-      openProject(activeProjects[nextIndex], activeProjects, nextIndex);
+      const nextProject = activeProjects[nextIndex];
+
+      window.clearTimeout(modalSwitchTimer);
+      activeProjectIndex = nextIndex;
+      modalPanel.classList.add("is-switching");
+
+      modalSwitchTimer = window.setTimeout(() => {
+        renderModalProject(nextProject);
+        modalPanel.getBoundingClientRect();
+        modalPanel.classList.remove("is-switching");
+      }, 320);
     }
 
     function closeModal() {
+      if (!modal.classList.contains("is-open")) return;
+      window.clearTimeout(modalSwitchTimer);
+      modalPanel.classList.remove("is-switching");
       modal.classList.remove("is-open");
+      modal.classList.add("is-closing");
       modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
       modalCloseTimer = window.setTimeout(() => {
         if (modal.classList.contains("is-open")) return;
+        modal.classList.remove("is-closing", "is-social");
         modalPanel.classList.remove("is-social");
         modalMedia.innerHTML = "";
-      }, 320);
+        document.body.style.overflow = "";
+      }, 460);
+    }
+
+    const carouselAnimations = new WeakMap();
+    const carouselStops = new WeakMap();
+    const carouselStopCount = 2;
+
+    function easeInOutSine(t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function clampCarouselStop(stop) {
+      return Math.max(0, Math.min(carouselStopCount, stop));
+    }
+
+    function getCarouselMaxScroll(carousel) {
+      return Math.max(0, carousel.scrollWidth - carousel.clientWidth);
+    }
+
+    function getNearestCarouselStop(carousel) {
+      const maxScroll = getCarouselMaxScroll(carousel);
+      if (maxScroll <= 0) return 0;
+      return clampCarouselStop(Math.round((carousel.scrollLeft / maxScroll) * carouselStopCount));
+    }
+
+    function getCarouselTarget(carousel, direction) {
+      const maxScroll = getCarouselMaxScroll(carousel);
+      if (maxScroll <= 0) return 0;
+
+      const currentStop = carouselStops.has(carousel)
+        ? carouselStops.get(carousel)
+        : getNearestCarouselStop(carousel);
+      const nextStop = clampCarouselStop(currentStop + direction);
+      const step = maxScroll / carouselStopCount;
+
+      carouselStops.set(carousel, nextStop);
+      return nextStop === carouselStopCount ? maxScroll : Math.max(0, nextStop * step);
+    }
+
+    function animateCarouselScroll(carousel, direction, duration = 460) {
+      const previousAnimation = carouselAnimations.get(carousel);
+      if (previousAnimation) window.cancelAnimationFrame(previousAnimation);
+
+      const start = carousel.scrollLeft;
+      const target = getCarouselTarget(carousel, direction);
+      const change = target - start;
+      if (!change) {
+        carouselAnimations.delete(carousel);
+        updateCarouselControls(carousel);
+        return;
+      }
+
+      const startTime = performance.now();
+
+      const step = (now) => {
+        const elapsed = Math.min(1, (now - startTime) / duration);
+        carousel.scrollLeft = start + change * easeInOutSine(elapsed);
+
+        if (elapsed < 1) {
+          carouselAnimations.set(carousel, window.requestAnimationFrame(step));
+          return;
+        }
+
+        carousel.scrollLeft = target;
+        carouselAnimations.delete(carousel);
+        updateCarouselControls(carousel);
+      };
+
+      carouselAnimations.set(carousel, window.requestAnimationFrame(step));
+    }
+
+    function updateCarouselControls(carousel) {
+      const targetId = carousel.id;
+      const prevButton = document.querySelector(`[data-target="${targetId}"][data-scroll="prev"]`);
+      const nextButton = document.querySelector(`[data-target="${targetId}"][data-scroll="next"]`);
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      const atStart = carousel.scrollLeft <= 2;
+      const atEnd = carousel.scrollLeft >= maxScroll - 2;
+      const isScrollable = maxScroll > 2;
+
+      if (!carouselAnimations.has(carousel)) {
+        carouselStops.set(carousel, getNearestCarouselStop(carousel));
+      }
+
+      if (prevButton) {
+        const shouldHidePrev = !isScrollable || atStart;
+        prevButton.classList.toggle("is-hidden", shouldHidePrev);
+        prevButton.disabled = shouldHidePrev;
+      }
+
+      if (nextButton) {
+        const shouldHideNext = !isScrollable || atEnd;
+        nextButton.classList.toggle("is-hidden", shouldHideNext);
+        nextButton.disabled = shouldHideNext;
+      }
+    }
+
+    function setupCarouselControls() {
+      const carousels = document.querySelectorAll(".carousel");
+
+      carousels.forEach((carousel) => {
+        let controlFrame = 0;
+        const queueControlsUpdate = () => {
+          if (controlFrame) return;
+          controlFrame = window.requestAnimationFrame(() => {
+            controlFrame = 0;
+            updateCarouselControls(carousel);
+          });
+        };
+
+        updateCarouselControls(carousel);
+        carousel.addEventListener("scroll", queueControlsUpdate, { passive: true });
+      });
+
+      window.addEventListener("resize", () => {
+        carousels.forEach(updateCarouselControls);
+      });
     }
 
     document.querySelectorAll("[data-scroll]").forEach((button) => {
       button.addEventListener("click", () => {
         const carousel = document.getElementById(button.dataset.target);
+        if (!carousel || button.classList.contains("is-hidden")) return;
         const direction = button.dataset.scroll === "next" ? 1 : -1;
-        carousel.scrollBy({
-          left: direction * carousel.clientWidth * 0.82,
-          behavior: "smooth"
-        });
+        animateCarouselScroll(carousel, direction, 460);
       });
     });
 
@@ -2185,52 +2771,14 @@
       }
     });
 
-    function initMotion() {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const targets = [
-        ...document.querySelectorAll(".hero > div, .hero-visual, .logo-group, .recognition-card, .section-head, .footer > div"),
-        ...document.querySelectorAll(".project-card")
-      ];
-
-      targets.forEach((target, index) => {
-        target.classList.add("reveal-target");
-        target.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
-      });
-
-      document.body.classList.add("motion-ready");
-
-      if (reduceMotion || !("IntersectionObserver" in window)) {
-        targets.forEach((target) => target.classList.add("is-visible"));
-        return;
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      }, {
-        threshold: 0.16,
-        rootMargin: "0px 0px -8% 0px"
-      });
-
-      requestAnimationFrame(() => {
-        targets.forEach((target) => {
-          const rect = target.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
-            target.classList.add("is-visible");
-          } else {
-            observer.observe(target);
-          }
-        });
-      });
-    }
-
     mountYouTubeReel();
     renderCarousel("audiovisual-carousel", audiovisualProjects);
     renderCarousel("social-carousel", socialProjects);
-    initMotion();
+    setupCarouselControls();
+    setupScrollReveal();
+    window.setTimeout(() => {
+      document.body.classList.remove("page-intro");
+    }, 4600);
   </script>
 </body>
 </html>
