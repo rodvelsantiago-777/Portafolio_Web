@@ -506,7 +506,7 @@
       display: grid;
       place-items: center;
       width: 100%;
-      height: 72px;
+      height: 88px;
       min-width: 0;
       min-height: 0;
       overflow: hidden;
@@ -546,8 +546,8 @@
     }
 
     .software-slot {
-      gap: 6px;
-      padding: 12px 8px;
+      gap: 9px;
+      padding: 14px 10px;
       grid-template-rows: 42px auto;
       align-content: center;
       justify-items: center;
@@ -860,11 +860,12 @@
       aspect-ratio: 720 / 1280;
       border: 1px solid transparent;
       border-image: linear-gradient(
-        150deg,
-        color-mix(in srgb, var(--accent-color, var(--line)) 42%, rgba(242, 238, 232, 0.52)) 0%,
-        color-mix(in srgb, var(--accent-color, var(--line)) 64%, #050505 14%) 22%,
-        rgba(242, 238, 232, 0.08) 48%,
-        color-mix(in srgb, var(--accent-color, var(--line)) 52%, rgba(242, 238, 232, 0.24)) 100%
+        105deg,
+        color-mix(in srgb, var(--frame-left, var(--accent-color, var(--line))) 88%, rgba(242, 238, 232, 0.22)) 0%,
+        color-mix(in srgb, var(--frame-left, var(--accent-color, var(--line))) 52%, #050505 18%) 26%,
+        rgba(242, 238, 232, 0.08) 50%,
+        color-mix(in srgb, var(--frame-right, var(--accent-color, var(--line))) 54%, #050505 14%) 74%,
+        color-mix(in srgb, var(--frame-right, var(--accent-color, var(--line))) 88%, rgba(242, 238, 232, 0.2)) 100%
       ) 1;
       background-color: var(--poster-color, #262626);
       background-image: var(--poster-image, none);
@@ -872,9 +873,11 @@
       background-size: cover;
       transition: transform 320ms var(--ease-out), border-color 240ms ease, filter 280ms ease, box-shadow 280ms ease;
       box-shadow:
-        inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 20%, rgba(242, 238, 232, 0.1)),
+        inset 1px 0 0 color-mix(in srgb, var(--frame-left, var(--accent-color)) 40%, transparent),
+        inset -1px 0 0 color-mix(in srgb, var(--frame-right, var(--accent-color)) 40%, transparent),
         inset 0 0 28px color-mix(in srgb, var(--accent-color, transparent) 7%, transparent),
-        0 0 18px color-mix(in srgb, var(--accent-color, transparent) 14%, transparent);
+        -10px 0 18px color-mix(in srgb, var(--frame-left, var(--accent-color)) 14%, transparent),
+        10px 0 18px color-mix(in srgb, var(--frame-right, var(--accent-color)) 14%, transparent);
     }
 
     .poster::before {
@@ -924,9 +927,11 @@
       transform: translateY(-6px) scale(1.015);
       filter: contrast(1.03) saturate(1.02);
       box-shadow:
-        inset 0 0 0 1px color-mix(in srgb, var(--accent-color, rgba(242, 238, 232, 0.65)) 22%, transparent),
+        inset 1px 0 0 color-mix(in srgb, var(--frame-left, var(--accent-color, rgba(242, 238, 232, 0.65))) 46%, transparent),
+        inset -1px 0 0 color-mix(in srgb, var(--frame-right, var(--accent-color, rgba(242, 238, 232, 0.65))) 46%, transparent),
         inset 0 0 40px color-mix(in srgb, var(--accent-color, transparent) 9%, transparent),
-        0 0 28px color-mix(in srgb, var(--accent-color, transparent) 22%, transparent),
+        -14px 0 30px color-mix(in srgb, var(--frame-left, var(--accent-color)) 24%, transparent),
+        14px 0 30px color-mix(in srgb, var(--frame-right, var(--accent-color)) 24%, transparent),
         0 18px 44px rgba(0, 0, 0, 0.34);
     }
 
@@ -1022,8 +1027,8 @@
       justify-content: center;
       padding: clamp(14px, 3vw, 34px);
       background:
-        radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--ambient-a) 24%, transparent), transparent 28rem),
-        radial-gradient(circle at 22% 78%, color-mix(in srgb, var(--ambient-b) 18%, transparent), transparent 30rem),
+        radial-gradient(circle at 16% 22%, color-mix(in srgb, var(--ambient-a) 34%, transparent), transparent 30rem),
+        radial-gradient(circle at 86% 72%, color-mix(in srgb, var(--ambient-b) 30%, transparent), transparent 32rem),
         color-mix(in srgb, var(--ambient-c) 18%, rgba(0, 0, 0, 0.86));
       backdrop-filter: blur(16px);
       opacity: 0;
@@ -1056,8 +1061,8 @@
       overflow: auto;
       border: 1px solid var(--line-strong);
       background:
-        radial-gradient(circle at 26% 30%, color-mix(in srgb, var(--ambient-a) 22%, transparent), transparent 24rem),
-        radial-gradient(circle at 84% 72%, color-mix(in srgb, var(--ambient-b) 16%, transparent), transparent 22rem),
+        radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--ambient-a) 34%, transparent), transparent 25rem),
+        radial-gradient(circle at 88% 72%, color-mix(in srgb, var(--ambient-b) 28%, transparent), transparent 24rem),
         linear-gradient(145deg, color-mix(in srgb, var(--ambient-c) 24%, rgba(22, 18, 17, 0.96)), rgba(6, 6, 6, 0.98));
       box-shadow:
         0 0 72px color-mix(in srgb, var(--ambient-a) 26%, transparent),
@@ -1179,21 +1184,24 @@
       overflow: hidden;
       border: 1px solid transparent;
       border-image: linear-gradient(
-        150deg,
-        color-mix(in srgb, var(--accent-color, var(--line)) 42%, rgba(242, 238, 232, 0.52)) 0%,
-        color-mix(in srgb, var(--accent-color, var(--line)) 64%, #050505 14%) 22%,
-        rgba(242, 238, 232, 0.08) 48%,
-        color-mix(in srgb, var(--accent-color, var(--line)) 52%, rgba(242, 238, 232, 0.24)) 100%
+        105deg,
+        color-mix(in srgb, var(--frame-left, var(--accent-color, var(--line))) 92%, rgba(242, 238, 232, 0.18)) 0%,
+        color-mix(in srgb, var(--frame-left, var(--accent-color, var(--line))) 54%, #050505 16%) 26%,
+        rgba(242, 238, 232, 0.08) 50%,
+        color-mix(in srgb, var(--frame-right, var(--accent-color, var(--line))) 56%, #050505 12%) 74%,
+        color-mix(in srgb, var(--frame-right, var(--accent-color, var(--line))) 92%, rgba(242, 238, 232, 0.18)) 100%
       ) 1;
       background-color: var(--poster-color, #1b1b1b);
       background-image: var(--poster-image, none);
       background-position: center;
       background-size: cover;
       box-shadow:
-        inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 30%, rgba(242, 238, 232, 0.12)),
+        inset 1px 0 0 color-mix(in srgb, var(--frame-left, var(--accent-color)) 58%, transparent),
+        inset -1px 0 0 color-mix(in srgb, var(--frame-right, var(--accent-color)) 58%, transparent),
         inset 0 0 34px color-mix(in srgb, var(--accent-color, transparent) 10%, transparent),
         0 0 22px color-mix(in srgb, var(--accent-color, transparent) 18%, transparent),
-        0 0 52px color-mix(in srgb, var(--ambient-a) 22%, transparent);
+        -24px 0 58px color-mix(in srgb, var(--frame-left, var(--ambient-a)) 32%, transparent),
+        24px 0 58px color-mix(in srgb, var(--frame-right, var(--ambient-b)) 30%, transparent);
       opacity: 0;
       transform: scale(0.975);
       transition: opacity 460ms ease 90ms, transform 520ms var(--ease-soft) 90ms;
@@ -1744,13 +1752,14 @@
 
       .logo-slot {
         width: 100%;
-        height: 58px;
+        height: 72px;
         border-right: 1px solid rgba(242, 238, 232, 0.1);
         font-size: 0.68rem;
       }
 
       .software-slot {
-        padding: 9px 6px;
+        gap: 7px;
+        padding: 10px 6px 12px;
       }
 
       .client-logo.is-gutdoctor {
@@ -1932,7 +1941,7 @@
 
       .logo-slot {
         width: 100%;
-        height: 54px;
+        height: 70px;
       }
 
       .logo-slot:last-child {
@@ -2064,15 +2073,17 @@
 
       .logo-slot {
         width: 100%;
-        height: 50px;
+        height: 64px;
         border-bottom: 0;
         font-size: 0.6rem;
       }
 
       .software-slot {
+        gap: 6px;
         justify-items: center;
         align-content: center;
         min-width: 0;
+        padding: 8px 5px 10px;
       }
 
       .software-mark {
@@ -2179,7 +2190,7 @@
         </div>
         <div class="logo-group">
           <h3>Software / flujo de trabajo</h3>
-          <div class="logo-grid">
+          <div class="logo-grid software-grid">
             <div class="logo-slot software-slot" aria-label="Adobe Premiere Pro">
               <span class="software-mark software-premiere">Pr</span>
               <span class="software-name">Premiere Pro</span>
@@ -2329,6 +2340,16 @@
     const audiovisualProjects = [
       audiovisualProject({
         number: 1,
+        title: "Donde Nace el Aguua",
+        logline: "Entre frailejones y niebla, este documental explora las conexiones invisibles del páramo para demostrar cómo lo que pasa desapercibido sostiene nuestro propio equilibrio.",
+        thumbnail: "Posters/Borugo_POSTER.png",
+        link: "https://www.youtube.com/watch?v=ESBVWNBZrJY",
+        color: "#182319",
+        accentColor: "#7d8c4b",
+        ambientColors: ["#7d8c4b", "#2f4a33", "#0b120c"]
+      }),
+      audiovisualProject({
+        number: 2,
         title: "Selección Sabana",
         logline: "La previa al Mundial 2026 se vive entre risas, desafíos y mucho fútbol. Un programa que combina entretenimiento, concursos y la voz de los aficionados para celebrar el deporte desde una mirada fresca y divertida.",
         thumbnail: "Posters/Seleccion_Sabana_POSTER.png",
@@ -2338,7 +2359,7 @@
         ambientColors: ["#0f355f", "#0b6f82", "#07111a"]
       }),
       audiovisualProject({
-        number: 2,
+        number: 3,
         title: "Voces de una Tradición",
         logline: "Lo que comienza como un recorrido por el tradicional Almanaque Bristol se transforma en un homenaje a quienes han encontrado en el campo una forma de vida. Un documental que, entre humor, nostalgia y reflexión, celebra la memoria, las costumbres y la voz del campesino colombiano.",
         thumbnail: "Posters/Bristol_POSTER.png?v=20260806-bristol",
@@ -2348,7 +2369,7 @@
         ambientColors: ["#a35b2b", "#4f2712", "#1a0d07"]
       }),
       audiovisualProject({
-        number: 3,
+        number: 4,
         title: "GALÁN: Siempre Adelante",
         logline: "Un recorrido por la vida y el legado de Luis Carlos Galán, explorando su historia desde los años universitarios hasta su magnicidio. Más allá de su trayectoria política, el documental revela la dimensión humana de una de las figuras más influyentes de la historia reciente de Colombia y reflexiona sobre el impacto que su legado sigue teniendo en la actualidad.",
         thumbnail: "Posters/GALAN_SA_POSTER.png",
@@ -2358,7 +2379,7 @@
         ambientColors: ["#8f1430", "#430815", "#170408"]
       }),
       audiovisualProject({
-        number: 4,
+        number: 5,
         title: "ANALÍ",
         logline: "Todo parece un dibujo inocente, hasta que las preguntas comienzan a revelar lo que una niña aún no logra comprender. Concebido para el formato vertical y contado desde su perspectiva, ANALÍ construye un relato de suspenso y drama donde el horror no nace de lo que se ve, sino de lo que poco a poco sale a la luz.",
         thumbnail: "Posters/Anali_POSTER.png",
@@ -2368,7 +2389,7 @@
         ambientColors: ["#a35c7c", "#6f3f54", "#140d12"]
       }),
       audiovisualProject({
-        number: 5,
+        number: 6,
         title: "Color y Cuerpo – Retrato a Andrés Felipe Rodríguez Velásquez",
         logline: "A través de sus obras y sus reflexiones, Andrés Felipe Rodríguez Velásquez comparte la mirada de un artista en construcción. Un retrato documental sobre la creatividad, la identidad y el proceso de convertir las ideas en expresión.",
         thumbnail: "Posters/Andres_POSTER.png",
@@ -2378,7 +2399,7 @@
         ambientColors: ["#74451f", "#2f1c0d", "#14100b"]
       }),
       audiovisualProject({
-        number: 6,
+        number: 7,
         title: "Prioridades",
         logline: "Durante una entrevista laboral decisiva, una joven presencia una traición que amenaza con derrumbarlo todo. Entre el dolor y la incertidumbre, deberá decidir qué merece realmente su atención.",
         thumbnail: "Posters/Prioridades_POSTER.png",
@@ -2388,7 +2409,7 @@
         ambientColors: ["#858678", "#3f403b", "#111211"]
       }),
       audiovisualProject({
-        number: 7,
+        number: 8,
         title: "Memorias Rotas",
         logline: "Entre recuerdos convertidos en objetos y emociones que se resisten a desaparecer, una joven emprende un viaje por su propia mente para desprenderse de un amor que nunca terminó de irse. Un drama melancólico sobre la memoria, el duelo y las personas que permanecen incluso cuando creemos haberlas olvidado.",
         thumbnail: "Posters/Memorias_Rotas_POSTER.png",
@@ -2398,7 +2419,7 @@
         ambientColors: ["#7947b2", "#8a1a78", "#10091d"]
       }),
       audiovisualProject({
-        number: 8,
+        number: 9,
         title: "Sé lo que quieras ser",
         logline: "Una reinterpretación de Barbie (2023) desde el expresionismo alemán que explora las crisis de identidad y las contradicciones de ser mujer. A través del montaje de fragmentos cinematográficos, comerciales, música y diseño sonoro, el proyecto transforma imágenes preexistentes en una pieza audiovisual marcada por el contraste, la deformación y la tensión.",
         thumbnail: "Posters/Barbie_POSTER.png",
@@ -2408,7 +2429,7 @@
         ambientColors: ["#DA3287", "#6e1f4f", "#150711"]
       }),
       audiovisualProject({
-        number: 9,
+        number: 10,
         title: "Sin Relación Aparente",
         logline: "Un disparo rompe el silencio. Tres personas despiertan atrapadas en un juego donde cada turno puede ser el último. Mientras la muerte se convierte en una posibilidad cada vez más cercana, viejas heridas y verdades ocultas comienzan a salir a la luz.",
         thumbnail: "Posters/Sin_Relacion_Aparente_POSTER.png",
@@ -2420,7 +2441,18 @@
         ambientColors: ["#6a6866", "#3c3434", "#111111"]
       }),
       audiovisualProject({
-        number: 10,
+        number: 11,
+        title: "Niño",
+        logline: "Una canción y pieza audiovisual nacida en memoria de Michi, un compañero de vida cuya ausencia abre un diálogo íntimo con el duelo. Entre recuerdos, gratitud y despedida, Niño transforma la tristeza en una promesa de seguir adelante sin dejar atrás el amor.",
+        thumbnail: "Posters/Nino_POSTER.jpg",
+        link: "https://www.youtube.com/watch?v=sGPr88bewGQ",
+        color: "#101015",
+        accentColor: "#8a2028",
+        frameColors: ["#2d6d82", "#8a2028"],
+        ambientColors: ["#2b5c6d", "#6e1d25", "#050607"]
+      }),
+      audiovisualProject({
+        number: 12,
         title: "Künstler Schatten",
         logline: "Algunos crean para ser recordados. Otros convierten su obsesión en una forma de trascender. Künstler Schatten presenta el inquietante manifiesto de un hombre dispuesto a desafiar los límites entre el arte, la moral y la locura.",
         thumbnail: "Posters/Kunstler_Schatten_POSTER.png",
@@ -2430,7 +2462,7 @@
         ambientColors: ["#951833", "#52080e", "#170506"]
       }),
       audiovisualProject({
-        number: 11,
+        number: 13,
         title: "ZOMBIES 4: Dawn of the Vampires - Behind the Choreography",
         logline: "Behind the scenes que explora el proceso creativo detrás de las coreografías de ZOMBIES 4: Dawn of the Vampires, interpretadas por el artista Nicolás Alfonso, revelando el trabajo y la preparación que hacen posible cada puesta en escena.",
         thumbnail: "Posters/Disney_POSTER.png",
@@ -2440,7 +2472,7 @@
         ambientColors: ["#6f9844", "#2d4b25", "#10160d"]
       }),
       audiovisualProject({
-        number: 12,
+        number: 14,
         title: "Vivir",
         logline: "Frente a un río y con una llamada que amenaza con devolverla al pasado, una joven descubre que vivir también significa aprender a elegir.",
         thumbnail: "Posters/Vivir_POSTER.png",
@@ -2530,12 +2562,13 @@
       const button = document.createElement("button");
       const posterImage = project.thumbnail ? `url('${project.thumbnail}')` : "none";
       const accentColor = project.accentColor || project.color;
+      const frameColors = project.frameColors || [accentColor, accentColor];
 
       button.className = "project-card";
       button.type = "button";
       button.setAttribute("aria-label", `Abrir ${project.title}`);
       button.innerHTML = `
-        <div class="poster ${project.thumbnail ? "has-image" : ""}" data-number="${project.number}" style="--poster-color: ${project.color}; --poster-image: ${posterImage}; --accent-color: ${accentColor}"></div>
+        <div class="poster ${project.thumbnail ? "has-image" : ""}" data-number="${project.number}" style="--poster-color: ${project.color}; --poster-image: ${posterImage}; --accent-color: ${accentColor}; --frame-left: ${frameColors[0]}; --frame-right: ${frameColors[1]}"></div>
       `;
       button.addEventListener("click", () => {
         if ((project.type === "instagram" || project.type === "facebook") && isMobileViewport()) {
@@ -2670,8 +2703,9 @@
       modalTitle.textContent = project.title;
       modalTitle.classList.toggle("is-long", project.title.length > 42);
       modalLogline.textContent = project.logline;
-      modalLink.href = project.link;
+      modalLink.href = project.link || "#";
       modalLink.textContent = project.type === "instagram" ? "Abrir en Instagram" : project.type === "facebook" ? "Abrir en Facebook" : "Mírala aquí";
+      modalLink.style.display = project.link ? "inline-flex" : "none";
       modalBtsLink.href = project.btsLink || "#";
       modalBtsLink.textContent = project.btsLabel || "Ver BTS";
       modalBtsLink.style.display = project.btsLink ? "inline-flex" : "none";
@@ -2680,8 +2714,11 @@
       modal.style.setProperty("--ambient-b", ambientColors[1]);
       modal.style.setProperty("--ambient-c", ambientColors[2]);
       modalMedia.className = "modal-media";
+      const frameColors = project.frameColors || [project.accentColor || project.color, project.accentColor || project.color];
       modalMedia.style.setProperty("--poster-color", project.color);
       modalMedia.style.setProperty("--accent-color", project.accentColor || project.color);
+      modalMedia.style.setProperty("--frame-left", frameColors[0]);
+      modalMedia.style.setProperty("--frame-right", frameColors[1]);
       modalMedia.style.setProperty("--poster-image", project.thumbnail ? `url('${project.thumbnail}')` : "none");
       modalMedia.innerHTML = "";
 
